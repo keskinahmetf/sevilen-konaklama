@@ -1,0 +1,913 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sevilen Konaklama</title>
+<meta name="description" content="Sevilen Konaklama: Ortaca, Muğla’da aile işletmesi, 6 kişilik 4 tam eşyalı daire. Günlük ve haftalık konaklama. Dalyan, Sarıgerme, Göcek ve Köyceğiz’e yakın. Rezervasyon: +90 546 228 66 48">
+<meta property="og:title" content="Sevilen Konaklama · Ortaca, Muğla">
+<meta property="og:description" content="Muğla’daki sıcak yuvanız. 6 kişilik 4 tam eşyalı daire, bahçe ve mangal alanı. Rezervasyon telefonla.">
+<meta property="og:image" content="img/bahce.jpg">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#bfe3f6">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"LodgingBusiness","name":"Sevilen Konaklama","telephone":"+90 546 228 66 48","address":{"@type":"PostalAddress","streetAddress":"Dikmekavak Mah. Dikmekavak Cad. No:184","addressLocality":"Ortaca","addressRegion":"Muğla","postalCode":"48600","addressCountry":"TR"},"geo":{"@type":"GeoCoordinates","latitude":36.8134305,"longitude":28.7721896},"checkinTime":"15:00","checkoutTime":"11:00","petsAllowed":false,"numberOfRooms":4}</script>
+<link rel="icon" href="logo-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* Layout idea: colours taken from the Sevilen logo (navy script, orange, garden green, sea blue, bougainvillea). Info site, every path ends at "call us". */
+:root{
+  --bg:#f7fbfc;
+  --surface:#ffffff;
+  --ink:#1f3a5a;
+  --muted:#5b6b74;
+  --line:#dbe8ec;
+  --accent:#e2702a;
+  --accent-ink:#ffffff;
+  --deep:#1d4f6e;
+  --sand:#eef7f3;
+  --leaf:#eaf4e4;
+  --sea:#e3f1f8;
+  --sun:#f6b03c;
+  --door1:#5c9a3d; --door2:#2f8a76; --door3:#e0a01e; --door4:#d24a3c;
+  --font-display:"Outfit", "Figtree", system-ui, sans-serif;
+  --font-body:"Figtree", system-ui, -apple-system, "Segoe UI", sans-serif;
+  color-scheme:light;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0f1b22; --surface:#16252e; --ink:#e8f1f5; --muted:#a3b6bf; --line:#273b46;
+    --accent:#f08a45; --accent-ink:#1d0e03; --deep:#133447;
+    --sand:#132228; --leaf:#15241c; --sea:#122430; --sun:#f6b03c;
+    --door1:#86c062; --door2:#4fb59c; --door3:#f0bb45; --door4:#ec6e5f;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0f1b22; --surface:#16252e; --ink:#e8f1f5; --muted:#a3b6bf; --line:#273b46;
+    --accent:#f08a45; --accent-ink:#1d0e03; --deep:#133447;
+    --sand:#132228; --leaf:#15241c; --sea:#122430; --sun:#f6b03c;
+    --door1:#86c062; --door2:#4fb59c; --door3:#f0bb45; --door4:#ec6e5f;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font-body);font-size:17px;line-height:1.6}
+h1,h2,h3{font-family:var(--font-display);font-weight:600;letter-spacing:-.01em;line-height:1.15;text-wrap:balance;margin:0}
+h1{font-size:clamp(2.2rem,5vw,3.6rem)}
+h2{font-size:clamp(1.7rem,3.4vw,2.4rem)}
+h3{font-size:1.5rem}
+p{margin:0}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:4px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+.ph{background:color-mix(in srgb,var(--accent) 22%,transparent);border-radius:4px;padding:0 4px}
+
+/* Header */
+header.top{position:sticky;top:0;z-index:10;background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px 20px;max-width:1120px;margin:0 auto}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-family:var(--font-display);font-size:1.25rem}
+.brand-doors{display:flex;gap:3px}
+.brand-doors span{width:8px;height:16px;border-radius:4px 4px 1px 1px}
+.nav ul{display:flex;gap:22px;list-style:none;margin:0;padding:0;font-weight:500;font-size:.95rem}
+.nav ul a{text-decoration:none;color:var(--muted)}
+.nav ul a:hover{color:var(--ink)}
+.nav-right{display:flex;align-items:center;gap:12px}
+.lang{display:flex;border:1.5px solid var(--line);border-radius:999px;overflow:hidden}
+.lang button{border:0;background:transparent;color:var(--muted);font:600 .85rem var(--font-body);padding:6px 12px;cursor:pointer}
+.lang button[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:var(--accent);color:var(--accent-ink);border:0;border-radius:999px;padding:12px 22px;font:600 1rem var(--font-body);text-decoration:none;cursor:pointer;white-space:nowrap}
+.btn:hover{filter:brightness(1.06)}
+.btn.ghost{background:transparent;color:var(--ink);border:1.5px solid var(--line)}
+.btn svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+@media (max-width:900px){.nav ul{display:none}}
+@media (max-width:480px){.nav .btn .lbl{display:none}.nav .btn{padding:10px 12px}}
+
+/* Logo */
+.brand-logo{width:44px;height:44px;border-radius:50%;object-fit:cover;background:#fefdfd}
+.hero-logo{background:#fefdfd;border-radius:24px;padding:20px;border:1px solid var(--line);display:flex;justify-content:center}
+.hero-logo img{width:100%;max-width:420px;height:auto;display:block}
+
+/* Hero */
+.hero{padding:56px 0 150px;position:relative;overflow:hidden;background:linear-gradient(180deg,#bfe3f6 0%,#dcf0f9 45%,#f2fafc 75%,var(--bg) 100%)}
+:root[data-theme="dark"] .hero{background:linear-gradient(180deg,#0e2a3d 0%,#123446 60%,var(--bg) 100%)}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .hero{background:linear-gradient(180deg,#0e2a3d 0%,#123446 60%,var(--bg) 100%)}}
+.hero .btn.ghost{background:var(--surface)}
+.hero-bg{position:absolute;inset:0;width:100%;height:100%;z-index:0;pointer-events:none}
+.hero .wrap{position:relative;z-index:1}
+.hero-photo{margin:0;position:relative}
+.hero-photo img{width:100%;height:auto;aspect-ratio:1000/780;object-fit:cover;display:block;border-radius:22px;border:6px solid #fff;box-shadow:0 22px 50px rgba(20,70,100,.22)}
+.hero-photo figcaption{position:absolute;left:18px;bottom:18px;background:rgba(255,255,255,.92);color:#1f3a5a;border-radius:999px;padding:6px 14px;font-weight:600;font-size:.88rem}
+.cloud{animation:drift 60s linear infinite}
+.cloud.c2{animation-duration:90s}
+@keyframes drift{from{transform:translateX(-120px)}to{transform:translateX(120px)}}
+.wave1{animation:sway 9s ease-in-out infinite alternate}
+.wave2{animation:sway 12s ease-in-out infinite alternate-reverse}
+@keyframes sway{from{transform:translateX(-30px)}to{transform:translateX(30px)}}
+@media (prefers-reduced-motion: reduce){.cloud,.wave1,.wave2{animation:none}}
+.flowers{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+.flowers a{display:inline-flex;align-items:center;gap:8px;padding:7px 14px 7px 8px;border-radius:999px;background:var(--surface);border:1px solid var(--line);text-decoration:none;font-weight:600;font-size:.92rem}
+.flowers a:hover{border-color:var(--c)}
+.flowers svg{width:26px;height:26px}
+.wave{display:block;width:100%;height:40px}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:40px;align-items:center}
+@media (max-width:860px){.hero-grid{grid-template-columns:1fr}.hero-photo{max-width:520px}}
+.eyebrow{font-weight:600;letter-spacing:.08em;text-transform:uppercase;font-size:.8rem;color:var(--accent)}
+.hero p.lead{font-size:1.2rem;color:var(--muted);max-width:34em;margin-top:18px}
+.hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.facts{display:flex;flex-wrap:wrap;gap:28px;margin-top:36px;padding-top:24px;border-top:1px solid var(--line)}
+.facts div{display:flex;flex-direction:column}
+.facts strong{font-family:var(--font-display);font-size:1.8rem;font-weight:400}
+.facts span{color:var(--muted);font-size:.9rem}
+.facade{background:var(--deep);border-radius:20px;padding:28px;display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.facade a{border-radius:60px 60px 6px 6px;aspect-ratio:3/4.4;position:relative;display:flex;align-items:flex-start;justify-content:center;padding-top:18%;color:#fff;font-family:var(--font-display);font-size:2rem;text-decoration:none;box-shadow:inset 0 0 0 6px rgba(255,255,255,.12);transition:transform .2s}
+.facade a:hover{transform:translateY(-3px)}
+.facade a::after{content:"";position:absolute;right:16%;top:58%;width:10px;height:10px;border-radius:50%;background:#f1d38a}
+@media (max-width:820px){.hero-grid{grid-template-columns:1fr}.hero-logo{max-width:380px}}
+
+section{padding:72px 0}
+.sec-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:end;gap:16px;margin-bottom:32px}
+.sec-head p{color:var(--muted);max-width:36em}
+
+/* Apartments */
+.apt{display:grid;grid-template-columns:1.25fr 1fr;gap:36px;align-items:start;padding:36px 0;border-top:1px solid var(--line)}
+.apt:first-of-type{border-top:0;padding-top:0}
+.apt:nth-of-type(even) .gallery{order:2}
+.gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.gallery .main{grid-column:1/-1;aspect-ratio:16/10}
+.shot{border:0;padding:0;border-radius:12px;overflow:hidden;cursor:pointer;position:relative;aspect-ratio:4/3;background:var(--c);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.85);font:500 .8rem var(--font-body)}
+.shot img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .3s}
+.shot:hover img{transform:scale(1.03)}
+@media (prefers-reduced-motion: reduce){.shot img{transition:none}}
+.more-n{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(10,20,35,.55);color:#fff;font:600 1.4rem var(--font-display)}
+.shot.ph-shot{background:linear-gradient(135deg,var(--c),color-mix(in srgb,var(--c) 70%,#000))}
+.shot.ph-shot svg{width:28px;height:28px;stroke:currentColor;fill:none;stroke-width:1.6;opacity:.8}
+.shot .cap{position:absolute;left:10px;bottom:8px}
+.apt-info{display:flex;flex-direction:column;gap:14px}
+.apt-num{display:flex;align-items:center;gap:12px}
+.apt-num .badge{width:48px;height:48px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:color-mix(in srgb,var(--c) 16%,var(--surface));border:1.5px solid color-mix(in srgb,var(--c) 40%,transparent)}
+.apt-num .badge svg{width:30px;height:30px}
+.apt-num span{font-weight:600;color:var(--muted);font-size:.9rem;text-transform:uppercase;letter-spacing:.06em}
+.apt-info p{color:var(--muted)}
+.specs{display:grid;grid-template-columns:1fr 1fr;gap:8px;list-style:none;margin:0;padding:0}
+.specs li{border:1px solid var(--line);border-radius:10px;padding:8px 12px;font-size:.92rem;background:var(--surface)}
+.specs li b{display:block;font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);font-weight:600}
+.feat{display:flex;flex-wrap:wrap;gap:6px;list-style:none;margin:0;padding:0}
+.feat li.nw{background:color-mix(in srgb,var(--door2) 14%,transparent);font-weight:600}
+.feat li{border-radius:999px;padding:3px 12px;font-size:.85rem;background:color-mix(in srgb,var(--c) 14%,transparent);color:var(--ink)}
+@media (max-width:820px){.apt{grid-template-columns:1fr;gap:20px}.apt:nth-of-type(even) .gallery{order:0}}
+
+/* Amenities */
+.band{background:var(--leaf)}
+.amen li{background:var(--surface)!important}
+#explore{background:var(--sea)}
+.band{padding-bottom:72px}
+#reviews{background:var(--sand);padding-top:72px!important}
+.tinted{padding:0!important;line-height:0}
+.tinted svg{display:block;width:100%;height:44px}
+.amen{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:14px;list-style:none;padding:0;margin:0}
+.amen li{display:flex;gap:12px;align-items:flex-start;padding:16px;border:1px solid var(--line);border-radius:12px;background:var(--bg)}
+.amen svg{flex:none;width:24px;height:24px;stroke:var(--accent);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.amen b{display:block;font-weight:600}
+.amen span{color:var(--muted);font-size:.9rem}
+
+/* Map */
+.map{position:relative;aspect-ratio:4/3;border-radius:16px;overflow:hidden;border:1px solid var(--line);background:var(--surface)}
+.map iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.map-fallback{position:absolute;inset:0;background:color-mix(in srgb,var(--door3) 10%,var(--surface))}
+.map-fallback svg{width:100%;height:100%;display:block}
+.road{fill:none;stroke:var(--line);stroke-width:7;stroke-linecap:round}
+.road.main{stroke:color-mix(in srgb,var(--accent) 45%,var(--line));stroke-width:11}
+.road.thin{stroke-width:4}
+.pin{position:absolute;left:50%;top:50%;transform:translate(-50%,-100%);width:52px;height:52px}
+.pin svg{width:100%;height:100%;fill:var(--door2);stroke:#fff;stroke-width:1.4}
+.map-label{position:absolute;left:16px;bottom:16px;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:10px 14px;display:flex;flex-direction:column;font-size:.9rem;box-shadow:0 4px 16px rgba(0,0,0,.08)}
+.map-label span{color:var(--muted)}
+
+/* Reviews */
+.rating{display:flex;align-items:center;gap:10px;color:var(--muted)}
+.rating strong{font-family:var(--font-display);font-weight:400;font-size:2rem;color:var(--ink)}
+.stars{color:var(--accent);letter-spacing:2px;font-size:1.1rem}
+.revs{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;padding:4px 2px 14px;align-items:flex-start;scrollbar-width:thin;scrollbar-color:var(--line) transparent}
+.revs .rev{flex:0 0 clamp(260px,30%,340px);scroll-snap-align:start;margin:0}
+.rev blockquote{display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical;overflow:hidden;min-height:calc(1.6em * 4)}
+.rev blockquote.open{display:block;-webkit-line-clamp:unset}
+.rev .more{align-self:flex-start;border:0;background:none;padding:0;color:var(--accent);font:600 .9rem var(--font-body);cursor:pointer}
+.rev .more:hover{text-decoration:underline}
+.rev-bar{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:14px;flex-wrap:wrap}
+.rev-arrows{display:flex;gap:8px}
+.arrow{width:44px;height:44px;border-radius:50%;border:1.5px solid var(--line);background:var(--surface);color:var(--ink);font-size:1.5rem;line-height:1;cursor:pointer}
+.arrow:hover{border-color:var(--accent);color:var(--accent)}
+.rev-note{color:var(--muted);font-size:.9rem;margin:-18px 0 18px}
+.rev-note:empty{display:none}
+.rev{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:22px;display:flex;flex-direction:column;gap:12px}
+.rev blockquote{margin:0;font-size:1.02rem}
+.rev footer{border:0;padding:0;background:none;font-size:.85rem;color:var(--muted);margin-top:auto}
+.rev .more.off{visibility:hidden}
+
+/* About + location */
+.two{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.two p{color:var(--muted);margin-top:14px;max-width:34em}
+.photo-ph{aspect-ratio:4/3;border-radius:16px;border:2px dashed var(--line);display:flex;align-items:center;justify-content:center;color:var(--muted);text-align:center;padding:20px;background:var(--surface)}
+.near{list-style:none;padding:0;margin:18px 0 0;display:flex;flex-direction:column;gap:0}
+.near li{display:flex;justify-content:space-between;gap:12px;padding:10px 0;border-bottom:1px solid var(--line);font-variant-numeric:tabular-nums}
+.near li span:last-child{color:var(--muted)}
+@media (max-width:820px){.two{grid-template-columns:1fr}}
+
+/* Call */
+.call{background:linear-gradient(135deg,#1d4f6e 0%,#23708a 60%,#2e8a95 100%);position:relative;overflow:hidden;color:#eef4f2;border-radius:24px;padding:48px 40px;display:grid;grid-template-columns:1.2fr .8fr;gap:40px;align-items:center}
+.call h2{color:#fff}
+.call p{color:#bcd0cb;margin-top:12px;max-width:32em}
+.steps{list-style:none;counter-reset:s;padding:0;margin:22px 0 0;display:flex;flex-direction:column;gap:10px}
+.steps li{counter-increment:s;display:flex;gap:12px;align-items:baseline;color:#dbe8e4}
+.steps li::before{content:counter(s);font-family:var(--font-display);color:#f1d38a;font-size:1.2rem;min-width:1em}
+.phone-card{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);border-radius:18px;padding:28px;display:flex;flex-direction:column;gap:14px}
+.phone-card .label{font-size:.8rem;text-transform:uppercase;letter-spacing:.08em;color:#bcd0cb;font-weight:600}
+.phone-card .num{font-family:var(--font-display);font-size:clamp(1.6rem,3vw,2.1rem);color:#fff;text-decoration:none;font-variant-numeric:tabular-nums}
+.contact{display:flex;flex-direction:column;gap:6px;padding-bottom:16px;border-bottom:1px solid rgba(255,255,255,.14)}
+.contact .who{font-size:.8rem;text-transform:uppercase;letter-spacing:.08em;color:#cfe3ea;font-weight:600}
+.cbtns{display:flex;flex-wrap:wrap;gap:8px;margin-top:4px}
+.cbtns .btn{padding:9px 16px;font-size:.92rem}
+.btn.wa{background:#25d366;color:#08321a}
+.btn.wa svg{width:18px;height:18px;stroke:none}
+.phone-card .hours{color:#bcd0cb;font-size:.92rem}
+@media (max-width:860px){.call{grid-template-columns:1fr;padding:32px 20px}}
+
+/* FAQ */
+.faq{max-width:760px}
+details{border-bottom:1px solid var(--line);padding:16px 0}
+summary{cursor:pointer;font-weight:600;font-size:1.05rem}
+details p{color:var(--muted);margin-top:10px}
+
+footer{background:var(--sand);border-top:1px solid var(--line);padding:36px 0;color:var(--muted);font-size:.92rem}
+.foot{display:flex;flex-wrap:wrap;justify-content:space-between;gap:20px}
+
+/* Lightbox */
+.lb{position:fixed;inset:0;background:rgba(5,12,10,.92);z-index:50;display:none;align-items:center;justify-content:center;padding:20px}
+.lb.open{display:flex}
+.lb-stage{max-width:1200px;width:100%;height:min(82vh,100%);border-radius:14px;overflow:hidden;display:flex;align-items:center;justify-content:center;color:#fff}
+.lb-stage img{width:100%;height:100%;object-fit:contain}
+.lb button{position:absolute;background:rgba(255,255,255,.12);color:#fff;border:0;border-radius:999px;width:48px;height:48px;font-size:1.4rem;cursor:pointer}
+.lb .x{top:16px;right:16px}
+.lb .prev{left:16px;top:50%;transform:translateY(-50%)}
+.lb .next{right:16px;top:50%;transform:translateY(-50%)}
+.lb .count{position:absolute;bottom:18px;left:0;right:0;text-align:center;color:#cfd8d5;font-size:.9rem}
+
+/* Shared layout plan */
+.plan{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:24px;margin-bottom:40px;display:grid;grid-template-columns:.8fr 1.2fr;gap:28px;align-items:center}
+.plan p{color:var(--muted);margin-top:8px}
+.rooms{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;list-style:none;margin:0;padding:0}
+.rooms li{border:1px solid var(--line);border-radius:12px;padding:14px;background:var(--bg);display:flex;flex-direction:column;gap:8px}
+.rooms b{font-weight:600}
+.rooms span{color:var(--muted);font-size:.88rem}
+.beds{display:flex;gap:5px;align-items:flex-end;height:26px}
+.beds i{display:block;border-radius:4px 4px 2px 2px;background:color-mix(in srgb,var(--accent) 55%,transparent);height:24px}
+.beds i.s{width:12px}.beds i.d{width:24px}.beds i.c{width:26px;height:14px;border-radius:6px;background:color-mix(in srgb,var(--door1) 45%,transparent)}
+.cap-note{margin-top:14px;color:var(--muted);font-size:.9rem}
+@media (max-width:820px){.plan{grid-template-columns:1fr}}
+
+/* Explore */
+.explore{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;list-style:none;padding:0;margin:0}
+.explore li{display:flex;flex-direction:column;border:1px solid var(--line);border-radius:14px;background:var(--surface);overflow:hidden}
+.explore img{width:100%;height:auto;aspect-ratio:16/10;object-fit:cover;display:block;background:var(--line)}
+.exp-body{display:flex;gap:14px;align-items:center;padding:12px 16px}
+.exp-body b{font-size:1.05rem}
+.explore .min{flex:none;min-width:58px;text-align:center;font-variant-numeric:tabular-nums}
+.explore .min strong{display:block;font-family:var(--font-display);font-weight:400;font-size:1.5rem;line-height:1}
+.explore .min small{color:var(--muted);font-size:.75rem}
+.explore b{display:block}
+.explore span{color:var(--muted);font-size:.9rem}
+
+/* Family photo */
+.family{margin:0;position:relative}
+.family img{width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;border-radius:20px;display:block;box-shadow:0 18px 40px rgba(20,70,100,.18)}
+.family figcaption{position:absolute;left:16px;bottom:16px;background:var(--surface);border-radius:999px;padding:8px 16px;font-weight:600;font-size:.95rem;box-shadow:0 4px 14px rgba(0,0,0,.12)}
+.two.about{grid-template-columns:1.1fr .9fr}
+@media (max-width:820px){.two.about{grid-template-columns:1fr}.family{max-width:420px}}
+
+/* House rules */
+.rules{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:22px 24px;margin-bottom:28px}
+.rules ul{list-style:none;margin:14px 0 0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px}
+.rules li{display:flex;gap:12px;align-items:flex-start}
+.rules svg{flex:none;width:24px;height:24px;stroke:var(--door2);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+
+/* Notes */
+.notes{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin-bottom:36px}
+.notes div{border-left:4px solid var(--accent);background:var(--surface);border-radius:4px 12px 12px 4px;padding:14px 16px}
+.notes b{display:block}
+.notes span{color:var(--muted);font-size:.92rem}
+.notes .no{border-left-color:var(--door2)}
+/* Phone layout */
+.mbar{display:none}
+@media (max-width:700px){
+  body{font-size:16px;padding-bottom:76px}
+  section{padding:52px 0}
+  .nav{padding:10px 16px}
+  .brand{font-size:1.05rem;white-space:nowrap}
+  .brand-logo{width:36px;height:36px}
+  .nav .btn{display:none}
+  .hero{padding:36px 0 110px}
+  .hero-actions .btn{flex:1 1 auto}
+  .explore{grid-template-columns:repeat(2,1fr);gap:10px}
+  .exp-body{padding:10px 12px;gap:10px}
+  .explore .min{min-width:0}
+  .explore .min strong{font-size:1.2rem}
+  .exp-body b{font-size:.92rem}
+  .apt{padding:28px 0}
+  .call{padding:28px 18px}
+  .mbar{display:flex;gap:10px;position:fixed;left:0;right:0;bottom:0;z-index:20;padding:10px 14px calc(10px + env(safe-area-inset-bottom));background:color-mix(in srgb,var(--bg) 94%,transparent);backdrop-filter:blur(8px);border-top:1px solid var(--line)}
+  .mbar .btn{flex:1;padding:12px}
+}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <nav class="nav" aria-label="Main">
+    <a class="brand" href="#top">
+      <img class="brand-logo" src="logo-icon.png" width="44" height="44" alt="">
+      <span>Sevilen Konaklama</span>
+    </a>
+    <ul>
+      <li><a href="#apartments" data-i18n="navApts"></a></li>
+      <li><a href="#explore" data-i18n="navExplore"></a></li>
+      <li><a href="#reviews" data-i18n="navRev"></a></li>
+      <li><a href="#location" data-i18n="navLoc"></a></li>
+      <li><a href="#faq" data-i18n="navFaq"></a></li>
+    </ul>
+    <div class="nav-right">
+      <div class="lang" role="group" aria-label="Dil / Language">
+        <button type="button" id="lang-tr" data-lang="tr" aria-pressed="true">TR</button>
+        <button type="button" id="lang-en" data-lang="en" aria-pressed="false">EN</button>
+      </div>
+      <a class="btn" href="#call"><svg viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg><span class="lbl" data-i18n="callBtn"></span></a>
+    </div>
+  </nav>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <svg class="hero-bg" viewBox="0 0 1440 640" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
+  <defs>
+    <radialGradient id="sunGlow"><stop offset="0" stop-color="#fff3c4"/><stop offset=".45" stop-color="#ffd76a" stop-opacity=".55"/><stop offset="1" stop-color="#ffd76a" stop-opacity="0"/></radialGradient>
+    <linearGradient id="seaA" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7cc8e0"/><stop offset="1" stop-color="#3a9ec4"/></linearGradient>
+    <linearGradient id="seaB" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4fb0d2"/><stop offset="1" stop-color="#2a86b0"/></linearGradient>
+  </defs>
+  <circle cx="1250" cy="110" r="150" fill="url(#sunGlow)"/>
+  <circle cx="1250" cy="110" r="46" fill="#ffd35c"/>
+  <g class="cloud" fill="#fff" opacity=".9"><ellipse cx="240" cy="90" rx="70" ry="22"/><ellipse cx="290" cy="76" rx="44" ry="26"/><ellipse cx="200" cy="80" rx="36" ry="20"/></g>
+  <g class="cloud c2" fill="#fff" opacity=".75"><ellipse cx="900" cy="60" rx="60" ry="18"/><ellipse cx="940" cy="48" rx="36" ry="20"/></g>
+  <g class="cloud" fill="#fff" opacity=".6"><ellipse cx="620" cy="150" rx="46" ry="14"/><ellipse cx="650" cy="141" rx="28" ry="15"/></g>
+  <path d="M1030 150 l10 -6 l10 6 M1062 130 l8 -5 l8 5" stroke="#2c5b78" stroke-width="2.5" fill="none" stroke-linecap="round" opacity=".55"/>
+  <path d="M0 470 C 180 390 330 400 470 430 S 760 380 930 410 S 1250 370 1440 400 V640 H0z" fill="#a9d39a" opacity=".85"/>
+  <path d="M0 500 C 200 450 380 470 560 485 S 900 450 1120 470 S 1340 455 1440 462 V640 H0z" fill="#7fbb68"/>
+  <g fill="#5a9a46">
+    <path d="M90 470 c-10 -40 10 -70 20 -76 c10 6 30 36 20 76z"/><path d="M135 478 c-8 -32 8 -56 16 -60 c8 4 24 28 16 60z"/>
+    <path d="M1180 458 c-10 -40 10 -70 20 -76 c10 6 30 36 20 76z"/><path d="M1228 466 c-8 -32 8 -56 16 -60 c8 4 24 28 16 60z"/><path d="M1268 470 c-6 -26 6 -46 13 -50 c7 4 19 24 13 50z"/>
+  </g>
+  <g transform="translate(1340 395)"><path d="M0 80 q-4 -50 8 -78" stroke="#8a5a2b" stroke-width="6" fill="none"/><g fill="#4f9440"><path d="M8 2 q-34 -6 -46 12 q28 -6 46 -12z"/><path d="M8 2 q34 -8 46 8 q-28 -4 -46 -8z"/><path d="M8 2 q-20 -26 -10 -40 q8 20 10 40z"/><path d="M8 2 q24 -22 38 -20 q-20 8 -38 20z"/></g></g>
+  <path class="wave1" d="M-60 540 C 120 515 260 560 440 538 S 760 510 940 535 S 1260 560 1500 530 V640 H-60z" fill="url(#seaA)"/>
+  <g class="wave1" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round" opacity=".7"><path d="M160 560 q14 -9 28 0 t28 0"/><path d="M620 552 q14 -9 28 0 t28 0"/><path d="M1080 566 q14 -9 28 0 t28 0"/></g>
+  <path class="wave2" d="M-60 585 C 160 560 320 600 520 582 S 880 560 1080 584 S 1320 600 1500 578 V640 H-60z" fill="url(#seaB)"/>
+  <path d="M0 612 C 240 596 480 626 720 610 S 1200 598 1440 614 V640 H0z" fill="var(--bg)"/>
+</svg>
+    <div class="wrap hero-grid">
+      <div>
+        <div class="eyebrow" data-i18n="heroEyebrow"></div>
+        <h1 style="margin-top:12px" data-i18n="heroTitle"></h1>
+        <p class="lead" data-i18n="heroLead"></p>
+        <div class="hero-actions">
+          <a class="btn" href="#apartments" data-i18n="heroSee"></a>
+          <a class="btn ghost" href="#call" data-i18n="heroCall"></a>
+        </div>
+        <div class="flowers" id="flowerLinks"></div>
+      </div>
+      <figure class="hero-photo"><img src="img/bahce.jpg" width="1000" height="780" alt="Sevilen Konaklama bahçesi: asma gölgesi, hamak ve oturma alanı"><figcaption data-i18n="heroPhotoCap"></figcaption></figure>
+    </div>
+  </section>
+
+  <section id="apartments" style="padding-top:24px">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2 data-i18n="aptsTitle"></h2>
+        <p data-i18n="aptsLead"></p>
+      </div>
+      <div class="plan">
+        <div>
+          <h3 data-i18n="planTitle"></h3>
+          <p data-i18n="planText"></p>
+        </div>
+        <div>
+          <ul class="rooms" id="roomList"></ul>
+          <p class="cap-note" data-i18n="planNote"></p>
+        </div>
+      </div>
+      <div id="aptList"></div>
+    </div>
+  </section>
+
+  <div class="tinted" aria-hidden="true"><svg viewBox="0 0 1440 44" preserveAspectRatio="none"><path d="M0 44 C 240 0 480 0 720 22 S 1200 44 1440 10 V44 H0z" fill="var(--leaf)"/></svg></div>
+  <section class="band">
+    <div class="wrap">
+      <div class="sec-head"><h2 data-i18n="amenTitle"></h2><p data-i18n="amenLead"></p></div>
+      <ul class="amen" id="amenList"></ul>
+    </div>
+  </section>
+
+  <div class="tinted" aria-hidden="true" style="background:var(--leaf)"><svg viewBox="0 0 1440 44" preserveAspectRatio="none"><path d="M0 44 C 240 0 480 0 720 22 S 1200 44 1440 10 V44 H0z" fill="var(--sea)"/></svg></div>
+  <section id="explore">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2 data-i18n="expTitle"></h2>
+        <p data-i18n="expLead"></p>
+      </div>
+      <ul class="explore" id="expList"></ul>
+    </div>
+  </section>
+
+  <div class="tinted" aria-hidden="true" style="background:var(--sea)"><svg viewBox="0 0 1440 44" preserveAspectRatio="none"><path d="M0 44 C 240 0 480 0 720 22 S 1200 44 1440 10 V44 H0z" fill="var(--sand)"/></svg></div>
+  <section id="reviews" style="padding-top:24px">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2 data-i18n="revTitle"></h2>
+        <div class="rating"><strong>5,0</strong><span class="stars" aria-hidden="true">★★★★★</span><span data-i18n="revSource"></span></div>
+      </div>
+      <p class="rev-note" data-i18n="revNote"></p>
+      <div class="revs" id="revList" tabindex="0" aria-label="Google yorumları"></div>
+      <div class="rev-bar">
+        <a class="btn ghost" href="https://maps.app.goo.gl/ncTPJGWyjw4BJ9CZ7" data-i18n="revAll"></a>
+        <div class="rev-arrows">
+          <button type="button" class="arrow" id="revPrev" aria-label="Önceki yorumlar">‹</button>
+          <button type="button" class="arrow" id="revNext" aria-label="Sonraki yorumlar">›</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="tinted" aria-hidden="true" style="background:var(--sand)"><svg viewBox="0 0 1440 44" preserveAspectRatio="none"><path d="M0 44 C 240 0 480 0 720 22 S 1200 44 1440 10 V44 H0z" fill="var(--bg)"/></svg></div>
+  <section id="about">
+    <div class="wrap two about">
+      <div>
+        <div class="eyebrow" data-i18n="aboutEyebrow"></div>
+        <h2 style="margin-top:10px" data-i18n="aboutTitle"></h2>
+        <p data-i18n="aboutP1"></p>
+        <p data-i18n="aboutP2"></p>
+      </div>
+      <figure class="family"><img src="img/aile.jpg" width="800" height="1000" alt="Ramazan Amca ve Günnaz Teyze" loading="lazy"><figcaption data-i18n="familyCap"></figcaption></figure>
+    </div>
+  </section>
+
+  <section id="location" style="padding-top:0">
+    <div class="wrap two">
+      <div class="map" id="map">
+        <div class="map-fallback" id="mapFallback">
+          <svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+            <path d="M-10 210 C 90 190, 160 230, 410 170" class="road main"/>
+            <path d="M120 -10 C 140 90, 170 160, 200 310" class="road"/>
+            <path d="M-10 80 C 100 110, 260 60, 410 95" class="road"/>
+            <path d="M290 -10 C 270 100, 300 200, 330 310" class="road"/>
+            <path d="M200 150 L 410 260" class="road thin"/>
+            <path d="M-10 270 L 150 140" class="road thin"/>
+          </svg>
+          <div class="pin"><svg viewBox="0 0 24 24"><path d="M12 22s7-6.2 7-12a7 7 0 0 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.6"/></svg></div>
+          <div class="map-label"><b>Sevilen Konaklama</b><span data-i18n="mapLabel"></span></div>
+        </div>
+      </div>
+      <div>
+        <div class="eyebrow" data-i18n="locEyebrow"></div>
+        <h2 style="margin-top:10px" data-i18n="locTitle"></h2>
+        <p data-i18n="locP"></p>
+        <ul class="near" id="nearList"></ul>
+        <p style="display:flex;flex-wrap:wrap;gap:10px"><a class="btn" style="margin-top:6px" href="https://www.google.com/maps/dir/?api=1&amp;destination=36.8134305,28.7721896" data-i18n="locDir"></a><a class="btn ghost" style="margin-top:6px" href="https://maps.app.goo.gl/ncTPJGWyjw4BJ9CZ7" data-i18n="locMap"></a></p>
+      </div>
+    </div>
+  </section>
+
+  <section id="call" style="padding-top:24px">
+    <div class="wrap">
+      <div class="call">
+        <div>
+          <h2 data-i18n="callTitle"></h2>
+          <p data-i18n="callLead"></p>
+          <ol class="steps">
+            <li data-i18n="step1"></li>
+            <li data-i18n="step2"></li>
+            <li data-i18n="step3"></li>
+          </ol>
+        </div>
+        <div class="phone-card">
+          <div class="contact">
+            <span class="who">Ramazan Kesgin</span>
+            <a class="num" href="tel:+905462286648">+90 546 228 66 48</a>
+            <div class="cbtns">
+              <a class="btn" href="tel:+905462286648"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg><span data-i18n="callNow"></span></a>
+              <a class="btn wa" href="https://wa.me/905462286648"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.3 2.2 2.2 0 0 0 .1-1.3c0-.1-.2-.2-.5-.3z"/></svg><span>WhatsApp</span></a>
+            </div>
+          </div>
+          <div class="contact">
+            <span class="who">Günnaz Kesgin</span>
+            <a class="num" href="tel:+905462259293">+90 546 225 92 93</a>
+            <div class="cbtns">
+              <a class="btn" href="tel:+905462259293"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg><span data-i18n="callNow"></span></a>
+              <a class="btn wa" href="https://wa.me/905462259293"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.3 2.2 2.2 0 0 0 .1-1.3c0-.1-.2-.2-.5-.3z"/></svg><span>WhatsApp</span></a>
+            </div>
+          </div>
+          <span class="hours" data-i18n="phoneHours"></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq" style="padding-top:24px">
+    <div class="wrap">
+      <h2 style="margin-bottom:20px" data-i18n="faqTitle"></h2>
+      <div class="notes" id="noteList"></div>
+      <div class="rules">
+        <h3 data-i18n="rulesTitle"></h3>
+        <ul id="ruleList"></ul>
+      </div>
+      <div class="faq" id="faqList"></div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <span>© 2026 Sevilen Konaklama · Dikmekavak Mah. Dikmekavak Cad. No:184, Ortaca / Muğla</span>
+    <span>Ramazan Kesgin +90 546 228 66 48 · Günnaz Kesgin +90 546 225 92 93</span>
+  </div>
+</footer>
+
+<nav class="mbar" aria-label="Hızlı iletişim">
+  <a class="btn" href="tel:+905462286648"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg><span data-i18n="callNow"></span></a>
+  <a class="btn wa" href="https://wa.me/905462286648"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.3 2.2 2.2 0 0 0 .1-1.3c0-.1-.2-.2-.5-.3z"/></svg><span>WhatsApp</span></a>
+</nav>
+
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Photo">
+  <div class="lb-stage" id="lbStage"></div>
+  <button type="button" class="x" id="lbClose" aria-label="Close">×</button>
+  <button type="button" class="prev" id="lbPrev" aria-label="Previous">‹</button>
+  <button type="button" class="next" id="lbNext" aria-label="Next">›</button>
+  <div class="count" id="lbCount"></div>
+</div>
+
+<script>
+/* ============ TEXT (Turkish first, English second) ============ */
+const T = {
+  tr:{
+    navApts:"Daireler", navExplore:"Çevre", navRev:"Yorumlar", navLoc:"Konum", navFaq:"Bilgiler",
+    callBtn:"Bizi arayın",
+    heroEyebrow:"Ortaca · Muğla",
+    heroTitle:"Muğla’daki sıcak yuvanız",
+    heroLead:"Ortaca, Muğla’nın tam ortasında. Dalyan, Köyceğiz, Göcek, Fethiye ve Marmaris günübirlik mesafede. Ailenizle ya da arkadaşlarınızla, 6 kişiye kadar, uygun fiyata konaklayın.",
+    heroPhotoCap:"Bahçemiz: asma gölgesi ve hamak",
+    heroSee:"Daireleri görün", heroCall:"Rezervasyon için arayın",
+    factApts:"daire", factCap:"kişiye kadar her dairede", factRateVal:"5,0 ★", factRate:"Google puanı",
+    aptsTitle:"Dairelerimiz",
+    aptsLead:"Fotoğraflara tıklayarak tümünü büyük görebilirsiniz. Daireler tam eşyalıdır; kıyafetiniz, havlunuz ve kişisel eşyalarınızla gelmeniz yeterli.",
+    planTitle:"Her daire 6 kişilik",
+    planText:"Kalabalık aileler düşünülerek özel olarak tasarlandı. Her dairede 6 kişilik yatak, açık mutfaklı salon ve balkon var. Zemin kattaki dairelerin ayrıca bahçesi var.",
+    planNote:"6 kişiden fazlası için ek yatak ya da koltukların yatağa çevrilmesi konusunda lütfen önceden bizi arayın.",
+    rooms:[["Yataklar","1 çift kişilik + 4 tek kişilik yatak","dssss"],["Salon + açık mutfak","2 koltuk","cc"]],
+    chipGarden:"Bahçe", chipBalcony:"Balkon", chipEnsuite:"Ebeveyn banyosu", chipAc:"Her odada klima", chipNoWifi:"Wi-Fi yok", baths:"Banyo",
+    guests:"Kişi", rooms_:"Oda", size:"Büyüklük", floor:"Kat", upTo:n=>`En fazla ${n} kişi`, photo:"Fotoğraf",
+    amenTitle:"Her dairede", amenLead:"Elektrik, su, tüp ve temizlik fiyata dahildir.",
+    amen:[["Her odada klima","Yazın serin, kışın sıcak"],["Tam donanımlı mutfak","Tüm kap kacak mevcut, mutfak eşyası getirmenize gerek yok"],["Balkon ve yeşil manzara","Batıya bakar, sabah ve öğlen serindir"],["Ücretsiz mangal alanı","Bahçede, tüm misafirlerimiz kullanabilir"],["Televizyon","Her dairede"],["Ev sahibi aynı binada","Bir ihtiyacınız olursa hemen yardımcı oluyoruz"]],
+    expTitle:"Her gün başka bir güzellik",
+    expLead:"Kendi aracınızla ya da toplu taşımayla Muğla’nın en güzel yerlerine günübirlik gidebilirsiniz. Nereye gideceğinizi sorarsanız seve seve yol gösteririz.",
+    explore:[["15","Sarıgerme Plajı","En yakın deniz"],["15","Dalaman","Havalimanı ve Kayacık Sahili"],["20","Dalyan","Kaunos antik kenti, kral mezarları, kanal tekne turu ve çamur banyosu"],["25","İztuzu Plajı","Caretta caretta kaplumbağalarının yuvası"],["25","Köyceğiz","Göl kenarında canlı müzikli yemek ve kordon yürüyüşü"],["25","Göcek","Koylar ve günlük tekne turları"],["35","Akyaka","Azmak Çayı üzerinde kahvaltı ve plaj"],["50","Fethiye","Ölüdeniz, Kelebekler Vadisi, Saklıkent, Kayaköy"],["55","Marmaris","Koyları ve marinası ile"]],
+    min:"dk",
+    revTitle:"Misafirlerimiz ne diyor", revSource:"Google yorumları", revNote:"", revMore:"Devamını oku", revLess:"Daha az göster", revAll:"Google’da aç", revWho:"Google yorumu",
+    aboutEyebrow:"Hakkımızda",
+    aboutTitle:"Ramazan Amca ve Günnaz Teyze sizi bekliyor",
+    aboutP1:"Sevilen Konaklama’yı Ramazan Amca ve Günnaz Teyze ailece işletiyor ve aynı binada kendileri de oturuyor. Bu yüzden ortamımız sıcak ve samimidir; eksik bir şey olursa hemen yanınızdayız.",
+    aboutP2:"Misafirlerimizin gönül rahatlığıyla, huzurlu bir tatil yapması bizim en büyük mutluluğumuz. Bölgeyi tanıtmaya ve gezilecek yerler için rehberlik etmeye her zaman hazırız.",
+    familyCap:"Ramazan Amca & Günnaz Teyze",
+    locEyebrow:"Konum", locTitle:"Sakin, yeşil ve serin bir mahalle",
+    locP:"Dikmekavak Mah. Dikmekavak Cad. No:184, Ortaca / Muğla. Kolay adres: Dikmekavak Camii’nin yanı. Mahallemiz sessiz, güvenli ve meltem rüzgarı alan serin bir bölgede.",
+    near:[["Ortaca merkez ve alışveriş","5 dk"],["Market","50 m"],["Sarıgerme Plajı","15 dk"],["Dalaman Havalimanı","15 dk"]],
+    mapLabel:"Dikmekavak Camii yanı, Ortaca",
+    locDir:"Yol tarifi al", locMap:"Haritada aç",
+    callTitle:"Rezervasyon telefonla ya da WhatsApp’tan",
+    callLead:"Fiyatlarımız aya ve bayram/tatil günlerine göre değişir. Bizi arayın ya da WhatsApp’tan yazın, istediğiniz tarihler için fiyat ve müsaitlik bilgisini hemen verelim.",
+    step1:"Bizi arayın ya da WhatsApp’tan tarihlerinizi yazın",
+    step2:"Kaç kişi olduğunuzu söyleyin, size uygun daireyi seçelim",
+    step3:"Rezervasyonunuzu birlikte onaylayalım",
+    phoneHours:"Her gün 09:00 – 21:00 arası ulaşabilirsiniz", callNow:"Ara",
+    faqTitle:"Bilmeniz gerekenler",
+    rulesTitle:"Ev kuralları",
+    rules:["Ev içerisinde kesinlikle sigara içilmez.","Kumlu kıyafetleri lütfen çamaşır makinesine atmayın.","Evden ayrılırken lütfen klimayı kapatın.","Gece 00:00’dan sonra lütfen gürültü yapmayın.","Evcil hayvan kabul edilmez."],
+    notes:[["Giriş 15:00 · Çıkış 11:00","En erken giriş 15:00, en geç çıkış 11:00.",""],["En az 3 gün","3 günden kısa konaklamalarda ek temizlik ücreti alınır.",""],["Fiyat daire başına","Kişi başı değil. 6 kişiye kadar ek ücret yok.",""],["Her şey dahil","Elektrik, su, tüp ve temizlik fiyata dahildir.",""],["Wi-Fi yok","Dairelerimizde internet hizmeti bulunmuyor.","no"]],
+    faq:[
+      ["Gelirken ne getirmeliyim?","Sadece kıyafet, havlu ve kişisel bakım eşyalarınızı getirmeniz yeterli. Daireler tam eşyalıdır, tüm mutfak eşyaları mevcuttur."],
+      ["6 kişiden fazlayız, kalabilir miyiz?","Evet. 6 kişiden sonraki her kişi için günlük ek ücret alınır. Ek yatak ya da koltukların yatağa hazırlanması için lütfen önceden bizi arayın."],
+      ["Mangal alanını nasıl kullanırım?","Bahçedeki mangal alanı ücretsizdir; mangal, tutuşturmalık odun ve çıra bizden. Hijyen için ızgara telini ve kömürü kendiniz getirmelisiniz. 50 metre ötedeki markette bulabilirsiniz."],
+      ["Fiyatları nasıl öğrenirim?","Fiyatlar aya ve tatil günlerine göre değişir. Bizi arayın, tarihleriniz için hemen bilgi verelim."],
+      ["Aracım yok, gezebilir miyim?","Evet. Çevredeki yerlerin hepsine toplu taşımayla da ulaşabilirsiniz. Nasıl gideceğinizi size anlatırız."],
+      ["Evcil hayvan kabul ediyor musunuz?","Hayır, dairelerimize evcil hayvan kabul etmiyoruz."]
+    ]
+  },
+  en:{
+    navApts:"Apartments", navExplore:"Explore", navRev:"Reviews", navLoc:"Location", navFaq:"Good to know",
+    callBtn:"Call us",
+    heroEyebrow:"Ortaca · Muğla, Türkiye",
+    heroTitle:"Your warm home in Muğla",
+    heroLead:"Ortaca sits right in the middle of Muğla. Dalyan, Köyceğiz, Göcek, Fethiye and Marmaris are all day trips away. Stay with family or friends, up to 6 people, at a fair price.",
+    heroPhotoCap:"Our garden: vine shade and a hammock",
+    heroSee:"See the apartments", heroCall:"Call to book",
+    factApts:"apartments", factCap:"guests per apartment", factRateVal:"5.0 ★", factRate:"on Google",
+    aptsTitle:"Our apartments",
+    aptsLead:"Tap a photo to see all of them in full size. The apartments are fully furnished, so you only need to bring clothes, towels and personal items.",
+    planTitle:"Every apartment sleeps 6",
+    planText:"Designed with large families in mind. Every apartment sleeps 6 and has a living room with open kitchen and a balcony. The ground-floor apartments also have a garden.",
+    planNote:"For more than 6 guests, please call us in advance about an extra bed or making up the sofas.",
+    rooms:[["Beds","1 double + 4 single beds","dssss"],["Living room + open kitchen","2 sofas","cc"]],
+    chipGarden:"Garden", chipBalcony:"Balcony", chipEnsuite:"En-suite bathroom", chipAc:"AC in every room", chipNoWifi:"No Wi-Fi", baths:"Bathrooms",
+    guests:"Guests", rooms_:"Rooms", size:"Size", floor:"Floor", upTo:n=>`Up to ${n} guests`, photo:"Photo",
+    amenTitle:"In every apartment", amenLead:"Electricity, water, gas and cleaning are included in the price.",
+    amen:[["Air conditioning in every room","Cool in summer, warm in winter"],["Fully equipped kitchen","All cookware and dishes provided"],["Balcony with green views","West-facing, cool in the morning and at midday"],["Free barbecue area","In the garden, for all guests"],["Television","In every apartment"],["Hosts in the same building","We help right away if you need anything"]],
+    expTitle:"Somewhere new every day",
+    expLead:"By car or public transport, the best of Muğla is within a day trip. Ask us where to go and we’ll gladly show you the way.",
+    explore:[["15","Sarıgerme Beach","The nearest sea"],["15","Dalaman","Airport and Kayacık Beach"],["20","Dalyan","Ancient Kaunos, the rock tombs, canal boat trips and mud baths"],["25","İztuzu Beach","Nesting ground of the loggerhead turtles"],["25","Köyceğiz","Lakeside dinners with live music and a promenade walk"],["25","Göcek","Bays and daily boat tours"],["35","Akyaka","Breakfast over the Azmak river and a lovely beach"],["50","Fethiye","Ölüdeniz, Butterfly Valley, Saklıkent, Kayaköy"],["55","Marmaris","Bays and marina"]],
+    min:"min",
+    revTitle:"What our guests say", revSource:"Google reviews", revNote:"Reviews are shown in their original Turkish.", revMore:"Read more", revLess:"Show less", revAll:"Open on Google", revWho:"Google review",
+    aboutEyebrow:"About us",
+    aboutTitle:"Ramazan Amca and Günnaz Teyze look forward to meeting you",
+    aboutP1:"Sevilen Konaklama is run by Ramazan Amca and Günnaz Teyze (“Uncle Ramazan” and “Auntie Günnaz”), who live in the same building. That makes for a warm, friendly atmosphere, and if anything is missing we’re right there.",
+    aboutP2:"Nothing makes us happier than guests having a peaceful, carefree holiday. We’re always happy to introduce the area and help you plan where to go.",
+    familyCap:"Ramazan Amca & Günnaz Teyze",
+    locEyebrow:"Location", locTitle:"A quiet, green and breezy neighbourhood",
+    locP:"Dikmekavak Mah. Dikmekavak Cad. No:184, Ortaca / Muğla, Türkiye. Easy to find: next to Dikmekavak Mosque. The area is quiet, safe and cooled by the sea breeze.",
+    near:[["Ortaca centre and shops","5 min"],["Supermarket","50 m"],["Sarıgerme Beach","15 min"],["Dalaman Airport","15 min"]],
+    mapLabel:"Next to Dikmekavak Mosque, Ortaca",
+    locDir:"Get directions", locMap:"Open in Google Maps",
+    callTitle:"Book by phone or WhatsApp",
+    callLead:"Our prices depend on the month and on holidays. Call us or send a WhatsApp message and we’ll tell you the price and availability for your dates right away.",
+    step1:"Call us or send your dates on WhatsApp",
+    step2:"Tell us how many you are and we’ll pick the right apartment",
+    step3:"We confirm your booking together",
+    phoneHours:"Reachable daily 09:00 – 21:00", callNow:"Call",
+    faqTitle:"Good to know",
+    rulesTitle:"House rules",
+    rules:["No smoking inside the apartment.","Please don’t put sandy clothes in the washing machine.","Please switch off the air conditioning when you go out.","Please keep quiet after midnight.","No pets allowed."],
+    notes:[["Check-in 15:00 · Check-out 11:00","Earliest check-in 15:00, latest check-out 11:00.",""],["3 days minimum","Stays shorter than 3 days have an extra cleaning fee.",""],["Price per apartment","Not per person. No extra charge up to 6 guests.",""],["All included","Electricity, water, gas and cleaning are included.",""],["No Wi-Fi","The apartments do not have internet.","no"]],
+    faq:[
+      ["What should I bring?","Just clothes, towels and personal care items. The apartments are fully furnished and the kitchen has everything you need."],
+      ["We are more than 6. Can we stay?","Yes. Each person beyond 6 pays a small daily extra. Please call in advance so we can prepare an extra bed or the sofas."],
+      ["How does the barbecue area work?","The barbecue area in the garden is free. We provide the grill, kindling and firewood. For hygiene, please bring your own grill grate and charcoal; the supermarket 50 m away sells both."],
+      ["How do I find out the prices?","Prices depend on the month and holidays. Call us and we’ll tell you right away."],
+      ["I don’t have a car. Can I still get around?","Yes. All the places nearby can be reached by public transport too, and we’ll tell you how."],
+      ["Are pets allowed?","No, we do not accept pets in our apartments."]
+    ]
+  }
+};
+
+/* ============ APARTMENTS — edit here ============
+   Only name, floor, rooms and size differ. photos: add image file names, e.g. ["lale-salon.jpg","lale-balkon.jpg"]. */
+const APTS = [
+  {n:1, color:"var(--door1)", slug:"melisa", count:14, name:"Konak Melisa", floor:{tr:"Zemin kat", en:"Ground floor"}, rooms:{tr:"2+1", en:"2 bedrooms + living room"}, baths:2, size:"90 m²", garden:true},
+  {n:2, color:"var(--door2)", slug:"kaktus", count:14, name:"Konak Kaktüs", floor:{tr:"Zemin kat", en:"Ground floor"}, rooms:{tr:"2+1", en:"2 bedrooms + living room"}, baths:2, size:"110 m²", garden:true},
+  {n:3, color:"var(--door3)", slug:"papatya", count:11, name:"Konak Papatya", floor:{tr:"2. kat", en:"2nd floor"}, rooms:{tr:"1+1", en:"1 bedroom + living room"}, baths:1, size:"90 m²", garden:false},
+  {n:4, color:"var(--door4)", slug:"lale", count:9, name:"Konak Lale", floor:{tr:"2. kat", en:"2nd floor"}, rooms:{tr:"2+1", en:"2 bedrooms + living room"}, baths:2, size:"110 m²", garden:false}
+];
+const CAPACITY = 6;
+const FLOWERS = {
+  melisa:'<svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 30V9" stroke="#4d7f30" stroke-width="2" fill="none" stroke-linecap="round"/><path d="M16 22c-6 0-9-3-10-7 5-1 9 1 10 7z" fill="#6cab45"/><path d="M16 17c6 0 9-3 10-7-5-1-9 1-10 7z" fill="#7dbb52"/><path d="M16 11c-4-1-6-4-6-8 4 0 6 3 6 8z" fill="#5c9a3d"/><path d="M16 11c3-1 5-4 5-7-3 0-5 3-5 7z" fill="#8cc860"/></svg>',
+  kaktus:'<svg viewBox="0 0 32 32" aria-hidden="true"><path d="M8 24h16l-2 6H10z" fill="#d9773f"/><rect x="13" y="5" width="6" height="19" rx="3" fill="#2f8a76"/><path d="M13 15H9a2 2 0 0 1-2-2V9a1.5 1.5 0 0 1 3 0v3h3z" fill="#3fa48c"/><path d="M19 18h4a2 2 0 0 0 2-2v-4a1.5 1.5 0 0 0-3 0v3h-3z" fill="#3fa48c"/><circle cx="16" cy="4.5" r="2" fill="#ec6e9a"/></svg>',
+  papatya:'<svg viewBox="0 0 32 32" aria-hidden="true"><g fill="#fff" stroke="#e8d9b5" stroke-width=".8">'+[0,45,90,135,180,225,270,315].map(a=>`<ellipse cx="16" cy="7.5" rx="3.2" ry="6.5" transform="rotate(${a} 16 16)"/>`).join("")+'</g><circle cx="16" cy="16" r="4.6" fill="#f2b01e"/></svg>',
+  lale:'<svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 30V16" stroke="#4d7f30" stroke-width="2" fill="none" stroke-linecap="round"/><path d="M16 26c-5-1-8-4-8-9 4 1 7 4 8 9z" fill="#6cab45"/><path d="M9 6c2 3 4 4 7 4s5-1 7-4c1 6-1 12-7 12S8 12 9 6z" fill="#d24a3c"/><path d="M16 4c-3 2-4 5-3 9 1 3 2 4 3 5 1-1 2-2 3-5 1-4 0-7-3-9z" fill="#ec6e5f"/></svg>'
+};
+const EXP_IMG = ["sarigerme","dalaman","dalyan","iztuzu","koycegiz","gocek","akyaka","fethiye","marmaris"];
+const RULE_ICONS = [
+  '<path d="M3 13h13v4H3zM18 13v4M21 13v4M18 10c0-2 3-2 3-5"/><path d="M3 3l18 18"/>',
+  '<rect x="4" y="2" width="16" height="20" rx="2"/><circle cx="12" cy="13" r="5"/><path d="M8 6h.01M11 6h.01"/>',
+  '<path d="M3 5h18v7H3zM7 16l-1 3M12 16v4M17 16l1 3"/><path d="M12 8.5v1"/>',
+  '<path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/>',
+  '<circle cx="5.5" cy="10" r="2"/><circle cx="9.5" cy="5.5" r="2"/><circle cx="14.5" cy="5.5" r="2"/><circle cx="18.5" cy="10" r="2"/><path d="M12 12c-3 0-5.5 3.5-5.5 6 0 1.7 1.5 2.5 3 2l2.5-.7 2.5.7c1.5.5 3-.3 3-2 0-2.5-2.5-6-5.5-6z"/><path d="M2 2l20 20"/>'
+];
+const PH_SLOTS = 5;
+
+/* Guest reviews from Google Maps, original wording kept on purpose. */
+const REVIEWS = [
+  {
+  "name": "Harun Kuyucu",
+  "text": "Muğla tatilimizde kaldık. Tam aile ortamı. Bizim için konaklama yeri değil tam bir ev ortamıydı. A den z ye herşey düşünülmüş. Ramazan bey Günnaz hanım çok sıcak kanlı insanlar.Düşünmeden karar verip kalabilirsiniz… 10 numara 5 yıldız 👍👍👍👍👍 …"
+  },
+  {
+  "name": "murat kartekin",
+  "text": "Anlayışlı insanlar ve hijyen çok önem verdikleri belli. Kalabalık gruplar için çok uygun fiyat..."
+  },
+  {
+  "name": "Osman",
+  "text": "Ailenizle severek huzurla kalabileceğiniz sevgi saygı samimiyet dolu bir ortam. 10 gün boyunca ailemle kaldık ve çok memnun kaldık. Ramazan Hocam ve değerli eşi Günnaz hanıma ne kadar teşekkür etsek az gelir, minnettarız, çok sevdik ve tekrar tekrar gelmek istiyoruz. Temizlik, düzen, bağından üzüm ikramları, rehberlik, hoş sohbetleri, her sorunumuza anında yardımcı olmaları, sıcakkanlı, misafirperverlikleri ile iyi ki gelmişiz dedik ve herkese de tavsiye ederiz."
+  },
+  {
+  "name": "Aylin Özçelik Öztürk",
+  "text": "Göcek’te tekne turu yapmak için geldiğimizde Ortaca’da konakladığımız Sevilen Konaklama, bize adeta evimizdeymişiz gibi hissettirdi. 2 günlük deneyimimiz boyunca hem rahat ettik hem de çok huzurlu zaman geçirdik. Fiyat-performans açısından da gayet başarılı. Çevre ilçeleri ve doğal güzellikleri keşfetmek isteyenler için uzun süreli konaklamaya elverişli, huzurlu ve güvenilir bir seçenek olduğunu belirtmek isterim. Bizim için iyi ki tercih etmişiz dediğimiz bir deneyim oldu. Teşekkür ederiz 🙏"
+  },
+  {
+  "name": "Gokhan Yilmaz",
+  "text": "İki yaz  tatilimizi ailecek sevilen konaklamada geçirdik. Bu yaz içinde rezervasyonumuzu yaptık. Allah kısmet ederse bu yaz da oradayız. Ramazan abi  ve gülnaz abla çok sıcak kanlı cana yakın,ilgi ve alakalı insanlar. Evleri tertemiz ve düzenli kendinizi  evinizdeki kadar rahat hissedeceksiniz."
+  },
+  {
+  "name": "Metin Aydın",
+  "text": "Sahipleri güleryüzlü, ilgili ve yardımsever insanlar. Apart gayet temiz."
+  },
+  {
+  "name": "Hüseyin Yazgan",
+  "text": "Her yıl sürekli Ortaca'da tatil planlayan birisi olarak, ilk defa Sevilen Konaklama isimli yerde ailecek misafir olduk.Konakladığımız yerde tüm ihtiyaçlarımızı giderebileceğimiz malzemeler vardı. Sadece valizinizle gelmeniz yeterli oluyor. Yanında hemen market bulunuyor zaten. Bunun dışında işletme sahibi Ramazan bey, gezilmesi gerekli olan yerleri de size tarif edecektir. Ailecek gelip gönül rahatlığıyla kalabileceğiniz, güvenilir bir yer.Bizler oldukça memnun kaldık. Herkese bu sebeplerle burayı samimi olarak tavsiye ediyorum. Konaklama hizmetini profesyonel bir şekilde yürüten, sıcak diyaloglarını ve güleryüzlülüklerini konakladığımız sürece esirgemeyen Ramazan bey ve eşine bu vesileyle tekrar teşekkür ederim."
+  },
+  {
+  "name": "Leman ÇAKIR",
+  "text": "2 yıldır tatilimizi sevilen konaklamada yapıyoruz. Çok memnun kaldık. Konum olarak koylara ve plajlara yakın bulunmakta kendi evimiz gibi rahat ve temiz bir mekan. Ramazan Bey ve eşi Günnaz Hanımın ilgi ve alakasına çok teşekkür ederiz."
+  },
+  {
+  "name": "saadet tunç",
+  "text": "Tavsiye üzerini gittiğimiz bir yerdi. Çok memnun kaldık bu yıl tekrar gittik. Ramazan bey ve Gülnaz hnm çok cana yakın ve güler yüzlü. Odalar ter temiz. Bundan sonra her yaz oraya gitmeyi düşünüyorum. Her yere çok yakın. Dönüşte zeytin yağımızı nar eksimizi de alıyoruz. Mutlu musmutlu  ayrılıyoruz."
+  },
+  {
+  "name": "Ugur Ozuguzel",
+  "text": "Bu yaz tanıştığımız Ramazan abi ve eşi Günnaz abla sayesinde tatilimiz çok güzel geçti. Güleryüzlü ve hoş sohbetleri her daim yardımcı olmaları bizi mutlu etti. Ailenizle gönül rahatlığıyla gidebileceğiniz bir yer. Her şey için teşekkürler."
+  },
+  {
+  "name": "Mert SAKINIR",
+  "text": "Ev sahibi aile gerçekten çok cana yakın ve her konuda ellerinden geleni seve seve yapıyorlar zaten kendileri de bizim bir üst katımızda kalıyorlardı. Ev çok temiz ve eşyalar olarak yeniydi. Konum olarak her yere 15 20 dakika uzaklıkta ve ulaşım her yere çok kolaydı bizim için. Hamak, mangal gibi şeylerin de mevcut. Biz çok memnun kaldık seneye nasipse tekrar gitmeyi düşünüyoruz."
+  },
+  {
+  "name": "Kerem NEVA",
+  "text": "Temiz,nezih ,sıcacık bir aile ortamı arayanlar için kesinlikle tavsiye edebileceğimiz bir mekan.Ramazan Bey' in ilgisi,rehberliği ve engin bilgisi ile yöreyi keşfetmek daha kolay oldu bizim için. Gönül rahatlığı ile tavsiye ederim."
+  },
+  {
+  "name": "Ayhan AKGÜL",
+  "text": "Ramazan bey ve gulnaz hanım çok kibar ve güleryüzlülerdi.. Ev de hersey düşünülmüştü kendi evimiz gibi rahat ettik kimse tarafından rahatsız edilmedik.. Tekrar kalmayı arzu ettiğimiz bir yer oldu bizim için herkese tavsiye ederim..."
+  },
+  {
+  "name": "Emel D",
+  "text": "Tanıdığım en güzel insanlarla, her yıl evimizin rahatlığında yaşadığımız yer keskin ailesine teşekkür ediyoruz. Ailelerinin bir üyesi gibi görüp bizleri kucakladıkları sevgi saygı ve desteklerini hep yanımızda hissettirdikleri için …. Gidin görün ve yaşayın ……"
+  },
+  {
+  "name": "Fatih Doğan",
+  "text": "Kurban bayramında oradaydik kendi evimiz gibiydi bir evde aradığınız herşey mevcuttu😎temiz düzenliydi sahipleri ilgiliydi teşekkür ederim kendilerine.insallah tekrar geliriz gideriz 👋🏻🥰 …"
+  },
+  {
+  "name": "İzzet Eskili",
+  "text": "Ev tertemizdi. Ramazan bey ve günnaz hanım bizi kendi evimizdeymişiz gibi hissettirdiler. Ayrıca ev plajlarada yakındı. Seneye de gideceğiz."
+  },
+  {
+  "name": "Sena Akpınar",
+  "text": "Tatil için daha ideal bi lokasyon olamazdı hem bulunduğu konum itibariyle hemde Ramazan beyin ilgisinden dolayı her sene hiç düşünülmeden gidilebilir."
+  },
+  {
+  "name": "Ömer Akdoğan",
+  "text": "Kendi evinizde hissedeceğiniz ailecek kalabileceginiz çok güzel bir daire ev sahipleri cana yakın yardımsever tavsiye ederim"
+  },
+  {
+  "name": "Cigdem Uzunkaya",
+  "text": "Tatil için tek adres, Gülnaz hanım ve Ramazan abi güzel insanları tanımak için bile gidilir."
+  },
+  {
+  "name": "Sevil Aldemir",
+  "text": "Yıllardır gidiyoruz 2. Evimiz gibi oldu"
+  },
+  {
+  "name": "Merve Torun",
+  "text": "Herşey çok güzeldi, ilgi alaka, temizlik 10 numara gerçekten."
+  },
+  {
+  "name": "Yasemin Yayla",
+  "text": "Temiz,düzenli ve güvenilir bir işletmeyi biz çok memnun kaldık bir daha tercih edeceğiz."
+  },
+  {
+  "name": "Ferhat Demirci",
+  "text": "İlki tanıştım ve bu ikinci gelişim ben günnaz teyzeme ve ramazan amcama gerek tertemiz evleri gerek güler yüzlerinden dolayı cooookk ama çok teşekkür ederim buraya geldiğim sürece hep burdayım insallah"
+  }
+  ];
+function checkClamp(){ document.querySelectorAll(".rev blockquote:not(.open)").forEach(q => { q.nextElementSibling.classList.toggle("off", q.scrollHeight <= q.clientHeight + 2); }); }
+if (document.fonts) document.fonts.ready.then(checkClamp);
+addEventListener("resize", checkClamp);
+const esc = x => x.replace(/&/g,"&amp;").replace(/</g,"&lt;");
+
+const ICONS = [
+  '<path d="M12 2v20M4.9 4.9l14.2 14.2M2 12h20M4.9 19.1L19.1 4.9"/>',
+  '<rect x="4" y="3" width="16" height="18" rx="2"/><path d="M4 9h16M8 6h.01M12 6h.01"/>',
+  '<path d="M3 21h18M5 21V10l7-6 7 6v11"/><path d="M9 21v-6h6v6"/>',
+  '<path d="M4 11h16a8 8 0 0 1-16 0zM8 19l-2 3M16 19l2 3M9 7c0-2 2-2 2-4M13 7c0-2 2-2 2-4"/>',
+  '<rect x="2" y="5" width="20" height="13" rx="2"/><path d="M8 21h8"/>',
+  '<path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/>'
+];
+const CAM = '<svg viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>';
+const strip = h => h.replace(/<[^>]+>/g,"");
+
+let lang = "tr";
+try { const s = localStorage.getItem("lang"); if (s === "en" || s === "tr") lang = s; } catch(e){}
+
+function photoList(a){ return Array.from({length:a.count}, (_,i) => ({src:`img/apt/${a.slug}-${i+1}.jpg`, thumb:`img/apt/${a.slug}-${i+1}-t.jpg`})); }
+const SHOW = 5;
+function shotHTML(a, p, i, extra){
+  const t = T[lang], name = a.name, lab = `${name} – ${t.photo} ${i+1}`;
+  const more = (i === SHOW-1 && a.count > SHOW) ? `<span class="more-n">+${a.count-SHOW}</span>` : "";
+  return p.src
+    ? `<button type="button" class="shot ${extra}" style="--c:${a.color}" data-apt="${a.n}" data-i="${i}" aria-label="${lab}"><img src="${p.thumb}" alt="${lab}" loading="lazy">${more}</button>`
+    : `<button type="button" class="shot ph-shot ${extra}" style="--c:${a.color}" data-apt="${a.n}" data-i="${i}" aria-label="${lab}">${CAM}<span class="cap">${t.photo} ${p.ph}</span></button>`;
+}
+function bedIcons(code){ return code ? `<span class="beds" aria-hidden="true">${[...code].map(c => `<i class="${c}"></i>`).join("")}</span>` : ""; }
+
+function render(){
+  const t = T[lang], $ = id => document.getElementById(id);
+  document.documentElement.lang = lang;
+  document.querySelectorAll("[data-i18n]").forEach(el => { const v = t[el.dataset.i18n]; if (typeof v === "string") el.innerHTML = v; });
+  document.querySelectorAll(".lang button").forEach(b => b.setAttribute("aria-pressed", b.dataset.lang === lang));
+
+  $("flowerLinks").innerHTML = APTS.map(a => `<a href="#apt-${a.n}" style="--c:${a.color}">${FLOWERS[a.slug]}${a.name.replace("Konak ","")}</a>`).join("");
+  $("roomList").innerHTML = t.rooms.map(r => `<li>${bedIcons(r[2])}<b>${r[0]}</b><span>${r[1]}</span></li>`).join("");
+
+  $("aptList").innerHTML = APTS.map(a => `<article class="apt" id="apt-${a.n}" style="--c:${a.color}">
+      <div class="gallery">${photoList(a).slice(0,SHOW).map((p,i) => shotHTML(a,p,i,i===0?"main":"")).join("")}</div>
+      <div class="apt-info">
+        <div class="apt-num"><span class="badge">${FLOWERS[a.slug]}</span><span>${a.floor[lang]}</span></div>
+        <h3>${a.name}</h3>
+        <ul class="specs">
+          <li><b>${t.guests}</b>${t.upTo(CAPACITY)}</li>
+          <li><b>${t.rooms_}</b>${a.rooms[lang]}</li>
+          <li><b>${t.size}</b>${a.size}</li>
+          <li><b>${t.floor}</b>${a.floor[lang]}</li>
+        </ul>
+        <ul class="feat">${[a.garden?t.chipGarden:"", t.chipBalcony, a.baths>1?t.chipEnsuite:"", t.chipAc].filter(Boolean).map(c => `<li>${c}</li>`).join("")}<li class="nw">${t.chipNoWifi}</li></ul>
+        <div><a class="btn ghost" href="#call">${t.callBtn}</a></div>
+      </div>
+    </article>`).join("");
+
+  $("amenList").innerHTML = t.amen.map((x,i) => `<li><svg viewBox="0 0 24 24">${ICONS[i]}</svg><div><b>${x[0]}</b><span>${x[1]}</span></div></li>`).join("");
+  $("expList").innerHTML = t.explore.map((x,i) => `<li><img src="img/${EXP_IMG[i]}.jpg" width="640" height="400" alt="${x[1]}" loading="lazy"><div class="exp-body"><div class="min"><strong>${x[0]}</strong><small>${t.min}</small></div><b>${x[1]}</b></div></li>`).join("");
+  $("nearList").innerHTML = t.near.map(x => `<li><span>${x[0]}</span><span>${x[1]}</span></li>`).join("");
+  $("revList").innerHTML = REVIEWS.map((r,i) => `<figure class="rev"><span class="stars" aria-label="5/5">★★★★★</span><blockquote id="rv${i}">“${esc(r.text)}”</blockquote><button type="button" class="more" aria-controls="rv${i}" aria-expanded="false">${t.revMore}</button><footer><b>${esc(r.name)}</b> · ${t.revWho}</footer></figure>`).join("");
+  requestAnimationFrame(checkClamp);
+  $("noteList").innerHTML = t.notes.map(x => `<div class="${x[2]}"><b>${x[0]}</b><span>${x[1]}</span></div>`).join("");
+  $("ruleList").innerHTML = t.rules.map((r,i) => `<li><svg viewBox="0 0 24 24">${RULE_ICONS[i]}</svg><span>${r}</span></li>`).join("");
+  $("faqList").innerHTML = t.faq.map(x => `<details><summary>${x[0]}</summary><p>${x[1]}</p></details>`).join("");
+}
+
+document.querySelectorAll(".lang button").forEach(b => b.addEventListener("click", () => {
+  lang = b.dataset.lang;
+  try { localStorage.setItem("lang", lang); } catch(e){}
+  render();
+}));
+
+/* Lightbox */
+const lb = document.getElementById("lb"), stage = document.getElementById("lbStage");
+let cur = {a:null, i:0}, lastFocus = null;
+function show(){
+  const a = cur.a, ps = photoList(a), p = ps[cur.i], t = T[lang], name = a.name;
+  stage.style.background = p.src ? "transparent" : `linear-gradient(135deg,${a.color},color-mix(in srgb,${a.color} 70%,#000))`;
+  stage.innerHTML = p.src ? `<img src="${p.src}" alt="${name} – ${t.photo} ${cur.i+1}">` : `<span>${name} · ${t.photo} ${p.ph}</span>`;
+  document.getElementById("lbCount").textContent = `${name} · ${cur.i+1} / ${ps.length}`;
+}
+function step(d){ const n = photoList(cur.a).length; cur.i = (cur.i + d + n) % n; show(); }
+function close(){ lb.classList.remove("open"); if (lastFocus) lastFocus.focus(); }
+document.getElementById("aptList").addEventListener("click", e => {
+  const b = e.target.closest(".shot"); if (!b) return;
+  lastFocus = b; cur = {a: APTS.find(x => x.n == b.dataset.apt), i: +b.dataset.i};
+  show(); lb.classList.add("open"); document.getElementById("lbClose").focus();
+});
+document.getElementById("lbClose").onclick = close;
+document.getElementById("lbPrev").onclick = () => step(-1);
+document.getElementById("lbNext").onclick = () => step(1);
+lb.addEventListener("click", e => { if (e.target === lb) close(); });
+document.addEventListener("keydown", e => {
+  if (!lb.classList.contains("open")) return;
+  if (e.key === "Escape") close();
+  if (e.key === "ArrowLeft") step(-1);
+  if (e.key === "ArrowRight") step(1);
+});
+
+const revList = document.getElementById("revList");
+revList.addEventListener("click", e => {
+  const b = e.target.closest(".more"); if (!b) return;
+  const open = b.getAttribute("aria-expanded") !== "true";
+  b.setAttribute("aria-expanded", open);
+  b.previousElementSibling.classList.toggle("open", open);
+  b.textContent = open ? T[lang].revLess : T[lang].revMore;
+});
+const revStep = d => revList.scrollBy({left: d * Math.max(revList.clientWidth * 0.85, 280), behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth"});
+document.getElementById("revPrev").onclick = () => revStep(-1);
+document.getElementById("revNext").onclick = () => revStep(1);
+
+render();
+
+/* Google Maps embed: loads on your own domain. The Claude preview blocks outside maps, so the drawn card shows there. */
+(function(){
+  const h = location.hostname;
+  if (!h || /claude|anthropic/i.test(h)) return;
+  const f = document.createElement("iframe");
+  f.src = "https://maps.google.com/maps?q=36.8134305,28.7721896&z=15&hl=tr&output=embed";
+  f.title = "Sevilen Konaklama – Google Maps";
+  f.loading = "lazy";
+  f.referrerPolicy = "no-referrer-when-downgrade";
+  f.allowFullscreen = true;
+  document.getElementById("map").appendChild(f);
+})();
+</script>
+</body>
+</html>
