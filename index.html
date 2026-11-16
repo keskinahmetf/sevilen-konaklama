@@ -999,6 +999,39 @@ const topbar = document.getElementById("topbar");
 const setBig = () => topbar.classList.toggle("big", scrollY < 40);
 addEventListener("scroll", setBig, {passive:true}); setBig();
 
+
+/* Auto-slide the review and place rows one card every 4 seconds.
+   Pauses while the visitor hovers, touches or focuses the row, when the row is off screen,
+   and never runs for visitors who prefer reduced motion. */
+function autoSlide(el, ms){
+  if (!el || matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  let hold = false, visible = false, resumeAt = 0;
+  const pause = d => { resumeAt = Date.now() + d; };
+  el.addEventListener("mouseenter", () => hold = true);
+  el.addEventListener("mouseleave", () => hold = false);
+  el.addEventListener("focusin", () => hold = true);
+  el.addEventListener("focusout", () => hold = false);
+  el.addEventListener("touchstart", () => pause(8000), {passive:true});
+  el.addEventListener("wheel", () => pause(8000), {passive:true});
+  document.querySelectorAll(`[data-slide="${el.id}"], #revPrev, #revNext`).forEach(b => {
+    if (b.id && !el.id.startsWith("rev") && b.id.startsWith("rev")) return;
+    b.addEventListener("click", () => pause(8000));
+  });
+  if ("IntersectionObserver" in window) new IntersectionObserver(es => { visible = es[0].isIntersecting; }, {threshold:.3}).observe(el);
+  else visible = true;
+  setInterval(() => {
+    if (hold || !visible || document.hidden || Date.now() < resumeAt) return;
+    if (el.querySelector(".rev blockquote.open")) return;
+    const card = el.firstElementChild; if (!card) return;
+    const gap = parseFloat(getComputedStyle(el).columnGap || getComputedStyle(el).gap) || 16;
+    const step = card.getBoundingClientRect().width + gap;
+    const atEnd = el.scrollLeft + el.clientWidth >= el.scrollWidth - 4;
+    el.scrollTo({left: atEnd ? 0 : el.scrollLeft + step, behavior: "smooth"});
+  }, ms);
+}
+autoSlide(document.getElementById("revList"), 4000);
+autoSlide(document.getElementById("expList"), 4000);
+
 render();
 
 /* Google Maps embed: loads on your own domain. The Claude preview blocks outside maps, so the drawn card shows there. */
