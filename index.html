@@ -211,7 +211,7 @@ section{padding:72px 0}
 .rev-note:empty{display:none}
 .rev{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:22px;display:flex;flex-direction:column;gap:12px}
 .rev blockquote{margin:0;font-size:1.02rem}
-.rev footer{border:0;padding:0;background:none;font-size:.85rem;color:var(--muted);margin-top:auto}
+.rev footer{border:0;padding:0;background:none;font-size:.85rem;color:var(--muted);margin-top:auto;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .rev .more.off{visibility:hidden}
 
 /* About + location */
@@ -518,7 +518,7 @@ footer.decorated{padding-top:56px}
         <p data-i18n="aboutP1"></p>
         <p data-i18n="aboutP2"></p>
       </div>
-      <figure class="family"><img src="img/aile.jpg" width="800" height="1000" alt="Ramazan Amca ve Günnaz Teyze" loading="lazy"><figcaption data-i18n="familyCap"></figcaption></figure>
+      <figure class="family"><img src="img/aile.jpg" width="800" height="1000" alt="Günnaz Teyze ve Ramazan Amca" loading="lazy"><figcaption data-i18n="familyCap"></figcaption></figure>
     </div>
   </section>
 
@@ -635,7 +635,7 @@ const T = {
     planTitle:"Her daire 6 kişilik",
     planText:"Kalabalık aileler düşünülerek özel olarak tasarlandı. Her dairede 6 kişilik yatak, açık mutfaklı salon ve balkon var. Zemin kattaki dairelerin ayrıca bahçesi var.",
     planNote:"6 kişiden fazlası için ek yatak ya da koltukların yatağa çevrilmesi konusunda lütfen önceden bizi arayın.",
-    rooms:[["Yataklar","1 çift kişilik + 4 tek kişilik yatak","DSSSS"],["Salon + açık mutfak","2 koltuk ve açık mutfak","FFK"]],
+    rooms:[["Yataklar","1 çift kişilik + 4 tek kişilik yatak","DSSSS"],["Mutfak + salon","Tam donanımlı mutfak ve oturma alanı","FK"]],
     chipGarden:"Bahçe", chipBalcony:"Balkon", chipEnsuite:"Ebeveyn banyosu", chipAc:"Her odada klima", chipNoWifi:"Wi-Fi yok", baths:"Banyo",
     guests:"Kişi", rooms_:"Oda", size:"Büyüklük", floor:"Kat", upTo:n=>`En fazla ${n} kişi`, photo:"Fotoğraf",
     amenTitle:"Her dairede", amenLead:"Elektrik, su, doğal gaz ve temizlik fiyata dahildir.",
@@ -649,7 +649,7 @@ const T = {
     aboutTitle:"Ramazan Amca ve Günnaz Teyze sizi bekliyor",
     aboutP1:"Sevilen Konaklama’yı Ramazan Amca ve Günnaz Teyze ailece işletiyor ve aynı binada kendileri de oturuyor. Bu yüzden ortamımız sıcak ve samimidir; eksik bir şey olursa hemen yanınızdayız.",
     aboutP2:"Misafirlerimizin gönül rahatlığıyla, huzurlu bir tatil yapması bizim en büyük mutluluğumuz. Bölgeyi tanıtmaya ve gezilecek yerler için rehberlik etmeye her zaman hazırız.",
-    familyCap:"Ramazan Amca & Günnaz Teyze",
+    familyCap:"Günnaz Teyze & Ramazan Amca",
     locEyebrow:"Konum", locTitle:"Sakin, yeşil ve serin bir mahalle",
     locP:"Dikmekavak Mah. Dikmekavak Cad. No:184, Ortaca / Muğla. Kolay adres: Dikmekavak Camii’nin yanı. Mahallemiz sessiz, güvenli ve meltem rüzgarı alan serin bir bölgede.",
     near:[["Market","1 dk"],["Ortaca merkez ve alışveriş","5 dk"],["Sarıgerme Plajı","15 dk"],["Dalaman Havalimanı","15 dk"]],
@@ -688,7 +688,7 @@ const T = {
     planTitle:"Every apartment sleeps 6",
     planText:"Designed with large families in mind. Every apartment sleeps 6 and has a living room with open kitchen and a balcony. The ground-floor apartments also have a garden.",
     planNote:"For more than 6 guests, please call us in advance about an extra bed or making up the sofas.",
-    rooms:[["Beds","1 double + 4 single beds","DSSSS"],["Living room + open kitchen","2 sofas and an open kitchen","FFK"]],
+    rooms:[["Beds","1 double + 4 single beds","DSSSS"],["Kitchen + living room","Fully equipped kitchen and sitting area","FK"]],
     chipGarden:"Garden", chipBalcony:"Balcony", chipEnsuite:"En-suite bathroom", chipAc:"AC in every room", chipNoWifi:"No Wi-Fi", baths:"Bathrooms",
     guests:"Guests", rooms_:"Rooms", size:"Size", floor:"Floor", upTo:n=>`Up to ${n} guests`, photo:"Photo",
     amenTitle:"In every apartment", amenLead:"Electricity, water, natural gas and cleaning are included in the price.",
@@ -697,12 +697,12 @@ const T = {
     expLead:"By car or public transport, the best of Muğla is within a day trip. Ask us where to go and we’ll gladly show you the way.",
     explore:[["15","Sarıgerme Beach","The nearest sea"],["15","Dalaman","Airport and Kayacık Beach"],["20","Dalyan","Ancient Kaunos, the rock tombs, canal boat trips and mud baths"],["25","İztuzu Beach","Nesting ground of the loggerhead turtles"],["25","Köyceğiz","Lakeside dinners with live music and a promenade walk"],["25","Göcek","Bays and daily boat tours"],["35","Akyaka","Breakfast over the Azmak river and a lovely beach"],["50","Fethiye","Ölüdeniz, Butterfly Valley, Saklıkent, Kayaköy"],["55","Marmaris","Bays and marina"]],
     min:"min",
-    revTitle:"What our guests say", revSource:"Google reviews", revNote:"Reviews are shown in their original Turkish.", revMore:"Read more", revLess:"Show less", revAll:"Open on Google", revWho:"Google review",
+    revTitle:"What our guests say", revSource:"Google reviews", revNote:"Reviews translated from Turkish.", revMore:"Read more", revLess:"Show less", revAll:"Open on Google", revWho:"Google review",
     aboutEyebrow:"About us",
     aboutTitle:"Ramazan Amca and Günnaz Teyze look forward to meeting you",
     aboutP1:"Sevilen Konaklama is run by Ramazan Amca and Günnaz Teyze (“Uncle Ramazan” and “Auntie Günnaz”), who live in the same building. That makes for a warm, friendly atmosphere, and if anything is missing we’re right there.",
     aboutP2:"Nothing makes us happier than guests having a peaceful, carefree holiday. We’re always happy to introduce the area and help you plan where to go.",
-    familyCap:"Ramazan Amca & Günnaz Teyze",
+    familyCap:"Günnaz Teyze & Ramazan Amca",
     locEyebrow:"Location", locTitle:"A quiet, green and breezy neighbourhood",
     locP:"Dikmekavak Mah. Dikmekavak Cad. No:184, Ortaca / Muğla, Türkiye. Easy to find: next to Dikmekavak Mosque. The area is quiet, safe and cooled by the sea breeze.",
     near:[["Supermarket","1 min"],["Ortaca centre and shops","5 min"],["Sarıgerme Beach","15 min"],["Dalaman Airport","15 min"]],
@@ -764,95 +764,118 @@ const PH_SLOTS = 5;
 const REVIEWS = [
   {
   "name": "Harun Kuyucu",
-  "text": "Muğla tatilimizde kaldık. Tam aile ortamı. Bizim için konaklama yeri değil tam bir ev ortamıydı. A den z ye herşey düşünülmüş. Ramazan bey Günnaz hanım çok sıcak kanlı insanlar.Düşünmeden karar verip kalabilirsiniz… 10 numara 5 yıldız 👍👍👍👍👍 …"
+  "text": "Muğla tatilimizde kaldık. Tam aile ortamı. Bizim için konaklama yeri değil tam bir ev ortamıydı. A den z ye herşey düşünülmüş. Ramazan bey Günnaz hanım çok sıcak kanlı insanlar.Düşünmeden karar verip kalabilirsiniz… 10 numara 5 yıldız 👍👍👍👍👍 …",
+  "en": "We stayed here during our holiday in Muğla. A true family atmosphere. For us it wasn’t just a place to stay, it felt like a real home. Everything has been thought of, from A to Z. Ramazan Bey and Günnaz Hanım are very warm people. You can decide without a second thought and stay here… 10 out of 10, 5 stars 👍👍👍👍👍 …"
   },
   {
   "name": "murat kartekin",
-  "text": "Anlayışlı insanlar ve hijyen çok önem verdikleri belli. Kalabalık gruplar için çok uygun fiyat..."
+  "text": "Anlayışlı insanlar ve hijyen çok önem verdikleri belli. Kalabalık gruplar için çok uygun fiyat...",
+  "en": "Understanding people, and it’s clear they care a lot about hygiene. Very good prices for large groups..."
   },
   {
   "name": "Osman",
-  "text": "Ailenizle severek huzurla kalabileceğiniz sevgi saygı samimiyet dolu bir ortam. 10 gün boyunca ailemle kaldık ve çok memnun kaldık. Ramazan Hocam ve değerli eşi Günnaz hanıma ne kadar teşekkür etsek az gelir, minnettarız, çok sevdik ve tekrar tekrar gelmek istiyoruz. Temizlik, düzen, bağından üzüm ikramları, rehberlik, hoş sohbetleri, her sorunumuza anında yardımcı olmaları, sıcakkanlı, misafirperverlikleri ile iyi ki gelmişiz dedik ve herkese de tavsiye ederiz."
+  "text": "Ailenizle severek huzurla kalabileceğiniz sevgi saygı samimiyet dolu bir ortam. 10 gün boyunca ailemle kaldık ve çok memnun kaldık. Ramazan Hocam ve değerli eşi Günnaz hanıma ne kadar teşekkür etsek az gelir, minnettarız, çok sevdik ve tekrar tekrar gelmek istiyoruz. Temizlik, düzen, bağından üzüm ikramları, rehberlik, hoş sohbetleri, her sorunumuza anında yardımcı olmaları, sıcakkanlı, misafirperverlikleri ile iyi ki gelmişiz dedik ve herkese de tavsiye ederiz.",
+  "en": "A place full of love, respect and sincerity where you can stay peacefully with your family. We stayed for 10 days with my family and were very happy. We can’t thank Ramazan Hocam and his dear wife Günnaz Hanım enough. We are grateful, we loved it and want to come back again and again. The cleanliness, the order, grapes from their vineyard, their guidance, pleasant chats, helping instantly with every problem, their warmth and hospitality: we were so glad we came, and we recommend it to everyone."
   },
   {
-  "name": "Aylin Özçelik Öztürk",
-  "text": "Göcek’te tekne turu yapmak için geldiğimizde Ortaca’da konakladığımız Sevilen Konaklama, bize adeta evimizdeymişiz gibi hissettirdi. 2 günlük deneyimimiz boyunca hem rahat ettik hem de çok huzurlu zaman geçirdik. Fiyat-performans açısından da gayet başarılı. Çevre ilçeleri ve doğal güzellikleri keşfetmek isteyenler için uzun süreli konaklamaya elverişli, huzurlu ve güvenilir bir seçenek olduğunu belirtmek isterim. Bizim için iyi ki tercih etmişiz dediğimiz bir deneyim oldu. Teşekkür ederiz 🙏"
+  "name": "Aylin Özçelik Ö.",
+  "text": "Göcek’te tekne turu yapmak için geldiğimizde Ortaca’da konakladığımız Sevilen Konaklama, bize adeta evimizdeymişiz gibi hissettirdi. 2 günlük deneyimimiz boyunca hem rahat ettik hem de çok huzurlu zaman geçirdik. Fiyat-performans açısından da gayet başarılı. Çevre ilçeleri ve doğal güzellikleri keşfetmek isteyenler için uzun süreli konaklamaya elverişli, huzurlu ve güvenilir bir seçenek olduğunu belirtmek isterim. Bizim için iyi ki tercih etmişiz dediğimiz bir deneyim oldu. Teşekkür ederiz 🙏",
+  "en": "When we came to Göcek for a boat tour, we stayed at Sevilen Konaklama in Ortaca and it made us feel right at home. During our 2-day stay we were comfortable and had a very peaceful time. It’s also great value for money. I’d like to add that it’s a peaceful and reliable option, well suited to longer stays, for anyone who wants to explore the surrounding towns and natural beauty. It was an experience we’re truly glad we chose. Thank you 🙏"
   },
   {
   "name": "Gokhan Yilmaz",
-  "text": "İki yaz  tatilimizi ailecek sevilen konaklamada geçirdik. Bu yaz içinde rezervasyonumuzu yaptık. Allah kısmet ederse bu yaz da oradayız. Ramazan abi  ve gülnaz abla çok sıcak kanlı cana yakın,ilgi ve alakalı insanlar. Evleri tertemiz ve düzenli kendinizi  evinizdeki kadar rahat hissedeceksiniz."
+  "text": "İki yaz  tatilimizi ailecek sevilen konaklamada geçirdik. Bu yaz içinde rezervasyonumuzu yaptık. Allah kısmet ederse bu yaz da oradayız. Ramazan abi  ve gülnaz abla çok sıcak kanlı cana yakın,ilgi ve alakalı insanlar. Evleri tertemiz ve düzenli kendinizi  evinizdeki kadar rahat hissedeceksiniz.",
+  "en": "We spent two summer holidays at Sevilen Konaklama as a family. We’ve already made our booking for this summer too. God willing, we’ll be there again this summer. Ramazan Abi and Gülnaz Abla are very warm, friendly and caring people. Their homes are spotless and tidy, and you’ll feel as comfortable as in your own home."
   },
   {
   "name": "Metin Aydın",
-  "text": "Sahipleri güleryüzlü, ilgili ve yardımsever insanlar. Apart gayet temiz."
+  "text": "Sahipleri güleryüzlü, ilgili ve yardımsever insanlar. Apart gayet temiz.",
+  "en": "The owners are cheerful, attentive and helpful people. The apartment is very clean."
   },
   {
   "name": "Hüseyin Yazgan",
-  "text": "Her yıl sürekli Ortaca'da tatil planlayan birisi olarak, ilk defa Sevilen Konaklama isimli yerde ailecek misafir olduk.Konakladığımız yerde tüm ihtiyaçlarımızı giderebileceğimiz malzemeler vardı. Sadece valizinizle gelmeniz yeterli oluyor. Yanında hemen market bulunuyor zaten. Bunun dışında işletme sahibi Ramazan bey, gezilmesi gerekli olan yerleri de size tarif edecektir. Ailecek gelip gönül rahatlığıyla kalabileceğiniz, güvenilir bir yer.Bizler oldukça memnun kaldık. Herkese bu sebeplerle burayı samimi olarak tavsiye ediyorum. Konaklama hizmetini profesyonel bir şekilde yürüten, sıcak diyaloglarını ve güleryüzlülüklerini konakladığımız sürece esirgemeyen Ramazan bey ve eşine bu vesileyle tekrar teşekkür ederim."
+  "text": "Her yıl sürekli Ortaca'da tatil planlayan birisi olarak, ilk defa Sevilen Konaklama isimli yerde ailecek misafir olduk.Konakladığımız yerde tüm ihtiyaçlarımızı giderebileceğimiz malzemeler vardı. Sadece valizinizle gelmeniz yeterli oluyor. Yanında hemen market bulunuyor zaten. Bunun dışında işletme sahibi Ramazan bey, gezilmesi gerekli olan yerleri de size tarif edecektir. Ailecek gelip gönül rahatlığıyla kalabileceğiniz, güvenilir bir yer.Bizler oldukça memnun kaldık. Herkese bu sebeplerle burayı samimi olarak tavsiye ediyorum. Konaklama hizmetini profesyonel bir şekilde yürüten, sıcak diyaloglarını ve güleryüzlülüklerini konakladığımız sürece esirgemeyen Ramazan bey ve eşine bu vesileyle tekrar teşekkür ederim.",
+  "en": "As someone who plans a holiday in Ortaca every year, this was our first time staying as a family at Sevilen Konaklama. The place had everything we needed. You only need to bring your suitcase. There’s a supermarket right next door anyway. On top of that, the owner Ramazan Bey will tell you about the places worth visiting. It’s a trustworthy place where you can come with your family and stay with peace of mind. We were very satisfied. For these reasons I sincerely recommend it to everyone. I’d like to thank Ramazan Bey and his wife once again, who run their accommodation professionally and never spared their warm conversation and smiles throughout our stay."
   },
   {
   "name": "Leman ÇAKIR",
-  "text": "2 yıldır tatilimizi sevilen konaklamada yapıyoruz. Çok memnun kaldık. Konum olarak koylara ve plajlara yakın bulunmakta kendi evimiz gibi rahat ve temiz bir mekan. Ramazan Bey ve eşi Günnaz Hanımın ilgi ve alakasına çok teşekkür ederiz."
+  "text": "2 yıldır tatilimizi sevilen konaklamada yapıyoruz. Çok memnun kaldık. Konum olarak koylara ve plajlara yakın bulunmakta kendi evimiz gibi rahat ve temiz bir mekan. Ramazan Bey ve eşi Günnaz Hanımın ilgi ve alakasına çok teşekkür ederiz.",
+  "en": "We’ve been spending our holidays at Sevilen Konaklama for 2 years. We were very happy. It’s close to the bays and beaches, and as comfortable and clean as our own home. Many thanks to Ramazan Bey and his wife Günnaz Hanım for their care and attention."
   },
   {
   "name": "saadet tunç",
-  "text": "Tavsiye üzerini gittiğimiz bir yerdi. Çok memnun kaldık bu yıl tekrar gittik. Ramazan bey ve Gülnaz hnm çok cana yakın ve güler yüzlü. Odalar ter temiz. Bundan sonra her yaz oraya gitmeyi düşünüyorum. Her yere çok yakın. Dönüşte zeytin yağımızı nar eksimizi de alıyoruz. Mutlu musmutlu  ayrılıyoruz."
+  "text": "Tavsiye üzerini gittiğimiz bir yerdi. Çok memnun kaldık bu yıl tekrar gittik. Ramazan bey ve Gülnaz hnm çok cana yakın ve güler yüzlü. Odalar ter temiz. Bundan sonra her yaz oraya gitmeyi düşünüyorum. Her yere çok yakın. Dönüşte zeytin yağımızı nar eksimizi de alıyoruz. Mutlu musmutlu  ayrılıyoruz.",
+  "en": "We went on a recommendation. We were very happy and went back again this year. Ramazan Bey and Gülnaz Hanım are very friendly and cheerful. The rooms are spotless. From now on I plan to go every summer. It’s close to everything. On the way back we also take home our olive oil and pomegranate molasses. We leave as happy as can be."
   },
   {
   "name": "Ugur Ozuguzel",
-  "text": "Bu yaz tanıştığımız Ramazan abi ve eşi Günnaz abla sayesinde tatilimiz çok güzel geçti. Güleryüzlü ve hoş sohbetleri her daim yardımcı olmaları bizi mutlu etti. Ailenizle gönül rahatlığıyla gidebileceğiniz bir yer. Her şey için teşekkürler."
+  "text": "Bu yaz tanıştığımız Ramazan abi ve eşi Günnaz abla sayesinde tatilimiz çok güzel geçti. Güleryüzlü ve hoş sohbetleri her daim yardımcı olmaları bizi mutlu etti. Ailenizle gönül rahatlığıyla gidebileceğiniz bir yer. Her şey için teşekkürler.",
+  "en": "Thanks to Ramazan Abi and his wife Günnaz Abla, whom we met this summer, our holiday was wonderful. Their smiles, pleasant chats and constant help made us happy. A place you can go to with your family with complete peace of mind. Thanks for everything."
   },
   {
   "name": "Mert SAKINIR",
-  "text": "Ev sahibi aile gerçekten çok cana yakın ve her konuda ellerinden geleni seve seve yapıyorlar zaten kendileri de bizim bir üst katımızda kalıyorlardı. Ev çok temiz ve eşyalar olarak yeniydi. Konum olarak her yere 15 20 dakika uzaklıkta ve ulaşım her yere çok kolaydı bizim için. Hamak, mangal gibi şeylerin de mevcut. Biz çok memnun kaldık seneye nasipse tekrar gitmeyi düşünüyoruz."
+  "text": "Ev sahibi aile gerçekten çok cana yakın ve her konuda ellerinden geleni seve seve yapıyorlar zaten kendileri de bizim bir üst katımızda kalıyorlardı. Ev çok temiz ve eşyalar olarak yeniydi. Konum olarak her yere 15 20 dakika uzaklıkta ve ulaşım her yere çok kolaydı bizim için. Hamak, mangal gibi şeylerin de mevcut. Biz çok memnun kaldık seneye nasipse tekrar gitmeyi düşünüyoruz.",
+  "en": "The host family is truly warm and gladly does everything they can. They actually lived one floor above us. The house was very clean and the furniture was new. Everything was 15–20 minutes away and getting around was very easy for us. There’s also a hammock, a barbecue and so on. We were very happy and hope to go again next year."
   },
   {
   "name": "Kerem NEVA",
-  "text": "Temiz,nezih ,sıcacık bir aile ortamı arayanlar için kesinlikle tavsiye edebileceğimiz bir mekan.Ramazan Bey' in ilgisi,rehberliği ve engin bilgisi ile yöreyi keşfetmek daha kolay oldu bizim için. Gönül rahatlığı ile tavsiye ederim."
+  "text": "Temiz,nezih ,sıcacık bir aile ortamı arayanlar için kesinlikle tavsiye edebileceğimiz bir mekan.Ramazan Bey' in ilgisi,rehberliği ve engin bilgisi ile yöreyi keşfetmek daha kolay oldu bizim için. Gönül rahatlığı ile tavsiye ederim.",
+  "en": "A place we can definitely recommend to anyone looking for a clean, decent and warm family atmosphere. Ramazan Bey’s care, guidance and deep knowledge made exploring the region much easier for us. I recommend it with peace of mind."
   },
   {
   "name": "Ayhan AKGÜL",
-  "text": "Ramazan bey ve gulnaz hanım çok kibar ve güleryüzlülerdi.. Ev de hersey düşünülmüştü kendi evimiz gibi rahat ettik kimse tarafından rahatsız edilmedik.. Tekrar kalmayı arzu ettiğimiz bir yer oldu bizim için herkese tavsiye ederim..."
+  "text": "Ramazan bey ve gulnaz hanım çok kibar ve güleryüzlülerdi.. Ev de hersey düşünülmüştü kendi evimiz gibi rahat ettik kimse tarafından rahatsız edilmedik.. Tekrar kalmayı arzu ettiğimiz bir yer oldu bizim için herkese tavsiye ederim...",
+  "en": "Ramazan Bey and Gülnaz Hanım were very kind and cheerful.. Everything had been thought of in the house; we were as comfortable as in our own home and nobody disturbed us.. It’s a place we’d love to stay again, I recommend it to everyone..."
   },
   {
   "name": "Emel D",
-  "text": "Tanıdığım en güzel insanlarla, her yıl evimizin rahatlığında yaşadığımız yer keskin ailesine teşekkür ediyoruz. Ailelerinin bir üyesi gibi görüp bizleri kucakladıkları sevgi saygı ve desteklerini hep yanımızda hissettirdikleri için …. Gidin görün ve yaşayın ……"
+  "text": "Tanıdığım en güzel insanlarla, her yıl evimizin rahatlığında yaşadığımız yer keskin ailesine teşekkür ediyoruz. Ailelerinin bir üyesi gibi görüp bizleri kucakladıkları sevgi saygı ve desteklerini hep yanımızda hissettirdikleri için …. Gidin görün ve yaşayın ……",
+  "en": "We thank the Keskin family, the loveliest people I know, at the place where we live every year with the comfort of our own home. For embracing us like members of their family and always making us feel their love, respect and support …. Go, see and experience it ……"
   },
   {
   "name": "Fatih Doğan",
-  "text": "Kurban bayramında oradaydik kendi evimiz gibiydi bir evde aradığınız herşey mevcuttu😎temiz düzenliydi sahipleri ilgiliydi teşekkür ederim kendilerine.insallah tekrar geliriz gideriz 👋🏻🥰 …"
+  "text": "Kurban bayramında oradaydik kendi evimiz gibiydi bir evde aradığınız herşey mevcuttu😎temiz düzenliydi sahipleri ilgiliydi teşekkür ederim kendilerine.insallah tekrar geliriz gideriz 👋🏻🥰 …",
+  "en": "We were there during Kurban Bayramı and it was like our own home. Everything you’d look for in a house was there 😎 clean and tidy, and the owners were attentive. Thank you to them. God willing we’ll come again 👋🏻🥰 …"
   },
   {
   "name": "İzzet Eskili",
-  "text": "Ev tertemizdi. Ramazan bey ve günnaz hanım bizi kendi evimizdeymişiz gibi hissettirdiler. Ayrıca ev plajlarada yakındı. Seneye de gideceğiz."
+  "text": "Ev tertemizdi. Ramazan bey ve günnaz hanım bizi kendi evimizdeymişiz gibi hissettirdiler. Ayrıca ev plajlarada yakındı. Seneye de gideceğiz.",
+  "en": "The house was spotless. Ramazan Bey and Günnaz Hanım made us feel at home. The house was also close to the beaches. We’re going again next year."
   },
   {
   "name": "Sena Akpınar",
-  "text": "Tatil için daha ideal bi lokasyon olamazdı hem bulunduğu konum itibariyle hemde Ramazan beyin ilgisinden dolayı her sene hiç düşünülmeden gidilebilir."
+  "text": "Tatil için daha ideal bi lokasyon olamazdı hem bulunduğu konum itibariyle hemde Ramazan beyin ilgisinden dolayı her sene hiç düşünülmeden gidilebilir.",
+  "en": "There couldn’t be a more ideal location for a holiday. Both for where it is and for Ramazan Bey’s care, you can go every year without a second thought."
   },
   {
   "name": "Ömer Akdoğan",
-  "text": "Kendi evinizde hissedeceğiniz ailecek kalabileceginiz çok güzel bir daire ev sahipleri cana yakın yardımsever tavsiye ederim"
+  "text": "Kendi evinizde hissedeceğiniz ailecek kalabileceginiz çok güzel bir daire ev sahipleri cana yakın yardımsever tavsiye ederim",
+  "en": "A lovely apartment where you’ll feel at home and can stay as a family. The hosts are friendly and helpful, I recommend it"
   },
   {
-  "name": "Cigdem Uzunkaya",
-  "text": "Tatil için tek adres, Gülnaz hanım ve Ramazan abi güzel insanları tanımak için bile gidilir."
+  "name": "Cigdem U.",
+  "text": "Tatil için tek adres, Gülnaz hanım ve Ramazan abi güzel insanları tanımak için bile gidilir.",
+  "en": "The one address for a holiday. It’s worth going just to meet such lovely people as Gülnaz Hanım and Ramazan Abi."
   },
   {
   "name": "Sevil Aldemir",
-  "text": "Yıllardır gidiyoruz 2. Evimiz gibi oldu"
+  "text": "Yıllardır gidiyoruz 2. Evimiz gibi oldu",
+  "en": "We’ve been going for years, it has become our 2nd home"
   },
   {
   "name": "Merve Torun",
-  "text": "Herşey çok güzeldi, ilgi alaka, temizlik 10 numara gerçekten."
+  "text": "Herşey çok güzeldi, ilgi alaka, temizlik 10 numara gerçekten.",
+  "en": "Everything was great; the care, attention and cleanliness were truly 10 out of 10."
   },
   {
   "name": "Yasemin Yayla",
-  "text": "Temiz,düzenli ve güvenilir bir işletmeyi biz çok memnun kaldık bir daha tercih edeceğiz."
+  "text": "Temiz,düzenli ve güvenilir bir işletmeyi biz çok memnun kaldık bir daha tercih edeceğiz.",
+  "en": "A clean, tidy and reliable place. We were very happy and will choose it again."
   },
   {
   "name": "Ferhat Demirci",
-  "text": "İlki tanıştım ve bu ikinci gelişim ben günnaz teyzeme ve ramazan amcama gerek tertemiz evleri gerek güler yüzlerinden dolayı cooookk ama çok teşekkür ederim buraya geldiğim sürece hep burdayım insallah"
+  "text": "İlki tanıştım ve bu ikinci gelişim ben günnaz teyzeme ve ramazan amcama gerek tertemiz evleri gerek güler yüzlerinden dolayı cooookk ama çok teşekkür ederim buraya geldiğim sürece hep burdayım insallah",
+  "en": "I met them the first time and this is my second visit. A huuuge thank you to Günnaz Teyze and Ramazan Amca, both for their spotless homes and their smiling faces. Whenever I come here, I’ll always stay here, God willing"
   }
   ];
 function checkClamp(){ document.querySelectorAll(".rev blockquote:not(.open)").forEach(q => { q.nextElementSibling.classList.toggle("off", q.scrollHeight <= q.clientHeight + 2); }); }
@@ -912,7 +935,7 @@ function render(){
   $("amenList").innerHTML = t.amen.map((x,i) => `<li><svg viewBox="0 0 24 24">${ICONS[i]}</svg><div><b>${x[0]}</b><span>${x[1]}</span></div></li>`).join("");
   $("expList").innerHTML = t.explore.map((x,i) => `<li><img src="img/${EXP_IMG[i]}.jpg" width="640" height="400" alt="${x[1]}" loading="lazy"><div class="exp-body"><div class="min"><strong>${x[0]}</strong><small>${t.min}</small></div><b>${x[1]}</b></div></li>`).join("");
   $("nearList").innerHTML = t.near.map(x => `<li><span>${x[0]}</span><span>${x[1]}</span></li>`).join("");
-  $("revList").innerHTML = REVIEWS.map((r,i) => `<figure class="rev"><span class="stars" aria-label="5/5">★★★★★</span><blockquote id="rv${i}">“${esc(r.text)}”</blockquote><button type="button" class="more" aria-controls="rv${i}" aria-expanded="false">${t.revMore}</button><footer><b>${esc(r.name)}</b> · ${t.revWho}</footer></figure>`).join("");
+  $("revList").innerHTML = REVIEWS.map((r,i) => `<figure class="rev"><span class="stars" aria-label="5/5">★★★★★</span><blockquote id="rv${i}">“${esc(lang === "en" && r.en ? r.en : r.text)}”</blockquote><button type="button" class="more" aria-controls="rv${i}" aria-expanded="false">${t.revMore}</button><footer><b>${esc(r.name)}</b> · ${t.revWho}</footer></figure>`).join("");
   requestAnimationFrame(checkClamp);
   $("noteList").innerHTML = t.notes.map(x => `<div class="${x[2]}"><b>${x[0]}</b><span>${x[1]}</span></div>`).join("");
   $("ruleList").innerHTML = t.rules.map((r,i) => `<li><svg viewBox="0 0 24 24">${RULE_ICONS[i]}</svg><span>${r}</span></li>`).join("");
