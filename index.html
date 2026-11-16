@@ -138,8 +138,8 @@ section{padding:72px 0}
 .sec-head p{color:var(--muted);max-width:36em}
 
 /* Apartments */
-.apt{display:grid;grid-template-columns:1.25fr 1fr;gap:36px;align-items:start;padding:36px 0;border-top:1px solid var(--line)}
-.apt:first-of-type{border-top:0;padding-top:0}
+.apt{display:grid;grid-template-columns:1.25fr 1fr;gap:36px;align-items:start;padding:26px;margin-bottom:24px;border-radius:24px;background:color-mix(in srgb,var(--c) 15%,#fff);border:1.5px solid color-mix(in srgb,var(--c) 35%,transparent);scroll-margin-top:90px;box-shadow:0 10px 30px rgba(20,70,100,.06)}
+.apt .specs li{background:#fff}
 .apt:nth-of-type(even) .gallery{order:2}
 .gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
 .gallery .main{grid-column:1/-1;aspect-ratio:16/10}
@@ -336,7 +336,7 @@ footer.decorated{padding-top:56px}
   .explore .min{min-width:0}
   .explore .min strong{font-size:1.2rem}
   .exp-body b{font-size:.92rem}
-  .apt{padding:28px 0}
+  .apt{padding:14px 14px 20px;margin-bottom:18px;gap:16px;border-radius:20px}
   .call{padding:28px 18px}
   .mbar{display:flex;gap:10px;position:fixed;left:0;right:0;bottom:0;z-index:20;padding:10px 14px calc(10px + env(safe-area-inset-bottom));background:color-mix(in srgb,var(--bg) 94%,transparent);backdrop-filter:blur(8px);border-top:1px solid var(--line)}
   .mbar .btn{flex:1;padding:12px}
@@ -651,7 +651,7 @@ const T = {
     familyCap:"Ramazan Amca & Günnaz Teyze",
     locEyebrow:"Konum", locTitle:"Sakin, yeşil ve serin bir mahalle",
     locP:"Dikmekavak Mah. Dikmekavak Cad. No:184, Ortaca / Muğla. Kolay adres: Dikmekavak Camii’nin yanı. Mahallemiz sessiz, güvenli ve meltem rüzgarı alan serin bir bölgede.",
-    near:[["Ortaca merkez ve alışveriş","5 dk"],["Market","50 m"],["Sarıgerme Plajı","15 dk"],["Dalaman Havalimanı","15 dk"]],
+    near:[["Market","1 dk"],["Ortaca merkez ve alışveriş","5 dk"],["Sarıgerme Plajı","15 dk"],["Dalaman Havalimanı","15 dk"]],
     mapLabel:"Dikmekavak Camii yanı, Ortaca",
     locDir:"Yol tarifi al", locMap:"Haritada aç",
     callTitle:"Rezervasyon telefonla ya da WhatsApp’tan",
@@ -704,7 +704,7 @@ const T = {
     familyCap:"Ramazan Amca & Günnaz Teyze",
     locEyebrow:"Location", locTitle:"A quiet, green and breezy neighbourhood",
     locP:"Dikmekavak Mah. Dikmekavak Cad. No:184, Ortaca / Muğla, Türkiye. Easy to find: next to Dikmekavak Mosque. The area is quiet, safe and cooled by the sea breeze.",
-    near:[["Ortaca centre and shops","5 min"],["Supermarket","50 m"],["Sarıgerme Beach","15 min"],["Dalaman Airport","15 min"]],
+    near:[["Supermarket","1 min"],["Ortaca centre and shops","5 min"],["Sarıgerme Beach","15 min"],["Dalaman Airport","15 min"]],
     mapLabel:"Next to Dikmekavak Mosque, Ortaca",
     locDir:"Get directions", locMap:"Open in Google Maps",
     callTitle:"Book by phone or WhatsApp",
