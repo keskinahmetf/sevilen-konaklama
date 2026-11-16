@@ -291,10 +291,11 @@ footer{background:var(--sand);border-top:1px solid var(--line);padding:36px 0;co
 
 /* Family photo */
 .family{margin:0;position:relative}
-.family img{width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;border-radius:20px;display:block;box-shadow:0 18px 40px rgba(20,70,100,.18)}
+.family{width:100%}
+.family img{width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;border-radius:20px;display:block;box-shadow:0 18px 40px rgba(20,70,100,.18)}
 .family figcaption{position:absolute;left:16px;bottom:16px;background:var(--surface);border-radius:999px;padding:8px 16px;font-weight:600;font-size:.95rem;box-shadow:0 4px 14px rgba(0,0,0,.12)}
-.two.about{grid-template-columns:1.1fr .9fr}
-@media (max-width:820px){.two.about{grid-template-columns:1fr}.family{max-width:420px}}
+.two.about{grid-template-columns:1fr 1.05fr}
+@media (max-width:820px){.two.about{grid-template-columns:1fr}.family{max-width:none}}
 
 /* House rules */
 .rules{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:22px 24px;margin-bottom:28px}
@@ -518,7 +519,7 @@ footer.decorated{padding-top:56px}
         <p data-i18n="aboutP1"></p>
         <p data-i18n="aboutP2"></p>
       </div>
-      <figure class="family"><img src="img/aile.jpg" width="800" height="1000" alt="Günnaz Teyze ve Ramazan Amca" loading="lazy"><figcaption data-i18n="familyCap"></figcaption></figure>
+      <figure class="family"><img src="img/aile.jpg" width="1200" height="900" alt="Günnaz Teyze ve Ramazan Amca" loading="lazy"><figcaption data-i18n="familyCap"></figcaption></figure>
     </div>
   </section>
 
