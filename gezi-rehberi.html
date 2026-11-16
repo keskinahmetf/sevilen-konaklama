@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light only">
+<title>Gezi Rehberi · Sevilen Konaklama</title>
+<meta name="description" content="Ortaca ve Muğla’da gezilecek yerler: deniz, kaplıca, kahvaltı, doğa, tarih, aktivite ve akşam yemeği önerileri.">
+<meta name="theme-color" content="#bfe3f6">
+<link rel="icon" href="logo-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
+<style>
+
+.toolbar{position:sticky;top:76px;z-index:5;background:color-mix(in srgb,var(--bg) 94%,transparent);backdrop-filter:blur(6px);padding:14px 0;border-bottom:1px solid var(--line)}
+.chips{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;padding:2px}
+.chips::-webkit-scrollbar{display:none}
+@media (min-width:701px){.chips{flex-wrap:wrap;overflow:visible}}
+.chip{display:inline-flex;align-items:center;gap:7px;border:1.5px solid var(--line);background:var(--surface);color:var(--ink);border-radius:999px;padding:7px 14px;font:600 .9rem var(--font-body);cursor:pointer;white-space:nowrap}
+.chip svg{width:18px;height:18px;fill:none;stroke:var(--c,var(--ink));stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+.chip[aria-pressed="true"]{background:var(--c,var(--ink));border-color:var(--c,var(--ink));color:#fff}
+.chip[aria-pressed="true"] svg{stroke:#fff}
+.chips.tags{margin-top:8px}
+.chips.tags .chip{font-size:.85rem;padding:5px 12px}
+.meta{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;color:var(--muted);font-size:.92rem;margin:22px 0 16px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:18px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:18px;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 8px 24px rgba(20,70,100,.05)}
+.card-top{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:12px 16px;background:color-mix(in srgb,var(--c) 14%,#fff);border-bottom:1px solid color-mix(in srgb,var(--c) 25%,transparent)}
+.cat{display:flex;align-items:center;gap:8px;font-weight:700;font-size:.82rem;text-transform:uppercase;letter-spacing:.05em;color:color-mix(in srgb,var(--c) 80%,#000)}
+.cat svg{width:22px;height:22px;fill:none;stroke:var(--c);stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+.time{background:#fff;border-radius:999px;padding:3px 10px;font-weight:700;font-size:.85rem;font-variant-numeric:tabular-nums;white-space:nowrap}
+.card-body{padding:16px;display:flex;flex-direction:column;gap:10px;flex:1}
+.card-body p{color:var(--muted);font-size:.95rem}
+.tags-row{display:flex;flex-wrap:wrap;gap:6px}
+.tag{font-size:.78rem;font-weight:600;padding:2px 9px;border-radius:999px;background:var(--sea);color:#24546e}
+.tag.k{background:#fdebd9;color:#8a4a12}
+.dir{margin-top:auto;align-self:flex-start;display:inline-flex;align-items:center;gap:6px;font-weight:700;color:var(--accent);text-decoration:none;font-size:.92rem}
+.dir:hover{text-decoration:underline}
+.note{margin-top:28px;color:var(--muted);font-size:.9rem;max-width:60em}
+.empty{padding:40px 0;color:var(--muted)}
+@media (max-width:900px){.toolbar{top:112px}}
+@media (max-width:700px){.toolbar{top:98px}.grid{grid-template-columns:1fr}}
+
+</style>
+</head>
+<body>
+<header class="top big" id="topbar">
+  <nav class="nav" aria-label="Main">
+    <a class="brand" href="index.html"><img class="brand-logo" src="logo-icon.png" width="44" height="44" alt=""><span>Sevilen Konaklama</span></a>
+    <ul class="tabs">
+      <li><a href="index.html" data-i18n="navHome"></a></li>
+      <li><a href="gezi-rehberi.html" data-i18n="navGuide" aria-current="page"></a></li>
+      <li><a href="rotalar.html" data-i18n="navRoutes"></a></li>
+      <li><a href="muglayi-taniyin.html" data-i18n="navMugla"></a></li>
+    </ul>
+    <div class="nav-right">
+      <div class="lang" role="group" aria-label="Dil / Language">
+        <button type="button" data-lang="tr" aria-pressed="true">TR</button>
+        <button type="button" data-lang="en" aria-pressed="false">EN</button>
+      </div>
+      <a class="btn" href="index.html#call"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg><span data-i18n="callBtn"></span></a>
+    </div>
+  </nav>
+</header>
+
+<main>
+  <section class="page-hero">
+    <div class="ph-sun" aria-hidden="true"></div>
+    <div class="ph-cloud a" aria-hidden="true"><svg viewBox="0 0 160 60" aria-hidden="true"><g fill="#fff"><ellipse cx="80" cy="40" rx="70" ry="18"/><ellipse cx="96" cy="26" rx="34" ry="22"/><ellipse cx="62" cy="30" rx="26" ry="18"/></g></svg></div><div class="ph-cloud b" aria-hidden="true"><svg viewBox="0 0 160 60" aria-hidden="true"><g fill="#fff"><ellipse cx="80" cy="40" rx="70" ry="18"/><ellipse cx="96" cy="26" rx="34" ry="22"/><ellipse cx="62" cy="30" rx="26" ry="18"/></g></svg></div>
+    <div class="ph-waves" aria-hidden="true"><svg viewBox="0 0 1440 110" preserveAspectRatio="none" aria-hidden="true"><path d="M0 40 C 200 10 380 60 600 36 S 1000 10 1200 34 S 1380 50 1440 30 V110 H0z" fill="#7fcbe2"/><path d="M0 64 C 220 44 420 80 640 62 S 1040 44 1240 64 S 1400 74 1440 60 V110 H0z" fill="#4fb0d2"/><path d="M0 86 C 240 76 480 98 720 86 S 1200 76 1440 90 V110 H0z" fill="#f7fbfc"/></svg></div>
+    <div class="ph-deco" style="left:6%" aria-hidden="true"><svg viewBox="0 0 100 90" aria-hidden="true"><path d="M50 84 L12 38 A40 40 0 0 1 88 38 Z" fill="#fbd3b8" stroke="#e8a27c" stroke-width="3" stroke-linejoin="round"/><g stroke="#e8a27c" stroke-width="3" stroke-linecap="round"><path d="M50 84 L50 10"/><path d="M50 84 L30 16"/><path d="M50 84 L70 16"/><path d="M50 84 L17 28"/><path d="M50 84 L83 28"/></g><path d="M40 84 h20 l-4 6 h-12z" fill="#e8a27c"/></svg></div>
+    <div class="ph-deco" style="right:8%;width:40px" aria-hidden="true"><svg viewBox="0 0 100 100" aria-hidden="true"><polygon points="50.0,6.0 61.2,34.6 91.8,36.4 68.1,55.9 75.9,85.6 50.0,69.0 24.1,85.6 31.9,55.9 8.2,36.4 38.8,34.6" fill="#f28c5b" stroke="#f28c5b" stroke-width="10" stroke-linejoin="round"/><g fill="#ffd0b0"><circle cx="50" cy="30" r="3"/><circle cx="68" cy="45" r="3"/><circle cx="32" cy="45" r="3"/><circle cx="40" cy="64" r="3"/><circle cx="60" cy="64" r="3"/><circle cx="50" cy="50" r="4"/></g></svg></div>
+    <div class="wrap">
+      <div class="eyebrow" data-i18n="eyebrow"></div>
+      <h1 data-i18n="h1"></h1>
+      <p class="lead" data-i18n="lead"></p>
+      <span class="draft" data-i18n="draft"></span>
+    </div>
+  </section>
+  <div class="toolbar">
+    <div class="wrap">
+      <div class="chips" id="catChips" role="group" aria-label="Kategori"></div>
+      <div class="chips tags" id="tagChips" role="group" aria-label="Filtre"></div>
+    </div>
+  </div>
+  <section style="padding-top:0">
+    <div class="wrap">
+      <div class="meta"><span id="count"></span></div>
+      <div class="grid" id="grid"></div>
+      <p class="note" data-i18n="note"></p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <span>© 2026 Sevilen Konaklama · <span data-i18n="footAddr"></span></span>
+    <span>Ramazan Kesgin +90 546 228 66 48 · Günnaz Kesgin +90 546 225 92 93</span>
+  </div>
+</footer>
+
+<nav class="mbar" aria-label="Hızlı iletişim">
+  <a class="btn" href="tel:+905462286648"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg><span data-i18n="callNow"></span></a>
+  <a class="btn wa" href="https://wa.me/905462286648"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.3 2.2 2.2 0 0 0 .1-1.3c0-.1-.2-.2-.5-.3z"/></svg><span>WhatsApp</span></a>
+</nav>
+
+<script>
+window.PAGE_T = {"tr": {"pageTitle": "Gezi Rehberi · Sevilen Konaklama", "eyebrow": "Ortaca’dan günübirlik", "h1": "Gezi Rehberi", "lead": "Denize gir, kaplıcada dinlen, nehir kenarında kahvaltı yap. Ortaca’dan kolayca gidebileceğiniz yerler, kategorilere göre.", "draft": "Taslak: içerik geliştiriliyor", "all": "Tümü", "kids": "Çocuklu aileler", "nocar": "Arabasız", "dir": "Yol tarifi", "min": "dk", "from": "Sevilen’den", "note": "Süreler Sevilen Konaklama’dan arabayla yaklaşık sürelerdir. Çalışma saatleri ve tekne seferleri mevsime göre değişebilir; gitmeden önce bize sorabilirsiniz.", "none": "Bu filtrede yer yok."}, "en": {"pageTitle": "Travel Guide · Sevilen Konaklama", "eyebrow": "Day trips from Ortaca", "h1": "Travel Guide", "lead": "Swim, soak in a hot spring, have breakfast by a river. Places you can easily reach from Ortaca, by category.", "draft": "Draft: content in progress", "all": "All", "kids": "With children", "nocar": "No car needed", "dir": "Directions", "min": "min", "from": "from Sevilen", "note": "Times are approximate driving times from Sevilen Konaklama. Opening hours and boat schedules change with the season; feel free to ask us before you go.", "none": "No places match this filter."}};
+const COUNT = {tr:n=>n+" yer", en:n=>n+" places"};
+const CATS = [{"k": "sea", "tr": "Deniz", "en": "Swimming", "ic": "<path d=\"M2 16c2 0 2-1.5 4-1.5S8 16 10 16s2-1.5 4-1.5S16 16 18 16s2-1.5 4-1.5\"/><path d=\"M2 20c2 0 2-1.5 4-1.5S8 20 10 20s2-1.5 4-1.5S16 20 18 20s2-1.5 4-1.5\"/><circle cx=\"17\" cy=\"7\" r=\"3\"/>"}, {"k": "spa", "tr": "Kaplıca & çamur", "en": "Spa & mud", "ic": "<path d=\"M4 15h16a6 6 0 0 1-6 6h-4a6 6 0 0 1-6-6z\"/><path d=\"M9 11c0-2 2-2 2-4M13 11c0-2 2-2 2-4\"/>"}, {"k": "breakfast", "tr": "Kahvaltı", "en": "Breakfast", "ic": "<path d=\"M4 9h12v5a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5z\"/><path d=\"M16 10h2a2.5 2.5 0 0 1 0 5h-2\"/><path d=\"M8 3v3M12 3v3\"/>"}, {"k": "nature", "tr": "Doğa", "en": "Nature", "ic": "<path d=\"M12 3l6 9h-3l4 6H5l4-6H6z\"/><path d=\"M12 18v3\"/>"}, {"k": "history", "tr": "Tarih", "en": "History", "ic": "<path d=\"M3 21h18M4 8h16M5 8l7-5 7 5\"/><path d=\"M7 8v10M12 8v10M17 8v10M4 18h16\"/>"}, {"k": "activity", "tr": "Aktivite", "en": "Activities", "ic": "<path d=\"M3 17l2 3h14l2-3z\"/><path d=\"M12 3v14M12 4l6 9h-6\"/>"}, {"k": "dinner", "tr": "Akşam yemeği", "en": "Dinner", "ic": "<path d=\"M7 3v8a2 2 0 0 0 2 2v8M5 3v5M9 3v5\"/><path d=\"M17 3c-2 2-2 6 0 8v10\"/>"}, {"k": "market", "tr": "Pazar & yerel ürünler", "en": "Markets & local food", "ic": "<path d=\"M4 9h16l-1.5 11h-13z\"/><path d=\"M8 9l2-5M16 9l-2-5\"/>"}];
+const PLACES = [{"cat": "sea", "t": "15", "tags": ["kids", "nocar"], "name": {"tr": "Sarıgerme Plajı", "en": "Sarıgerme Beach"}, "d": {"tr": "En yakın deniz. Uzun kumsal ve sığ, sakin su; çocuklu aileler için ideal.", "en": "The nearest sea. A long sandy beach with shallow, calm water, ideal for families with children."}, "q": "Sarıgerme Plajı"}, {"cat": "sea", "t": "15", "tags": ["kids"], "name": {"tr": "Dalaman Kayacık Sahili", "en": "Dalaman Kayacık Beach"}, "d": {"tr": "Havalimanına yakın, kalabalıktan uzak, geniş ve sakin bir sahil.", "en": "A wide, quiet beach near the airport, away from the crowds."}, "q": "Kayacık Plajı Dalaman"}, {"cat": "sea", "t": "25", "tags": ["kids", "nocar"], "name": {"tr": "İztuzu Plajı", "en": "İztuzu Beach"}, "d": {"tr": "Bir yanı göl, bir yanı deniz olan 4,5 km’lik kumsal. Caretta caretta kaplumbağalarının yuvası; yuvalama döneminde 20:00–08:00 arası kapalıdır.", "en": "A 4.5 km beach with a lake on one side and the sea on the other. Home to the loggerhead turtles; during nesting season it is closed from 20:00 to 08:00."}, "q": "İztuzu Plajı"}, {"cat": "sea", "t": "~35", "tags": ["kids"], "name": {"tr": "Akyaka Plajı", "en": "Akyaka Beach"}, "d": {"tr": "Gökova Körfezi’nde sığ ve temiz bir plaj. Öğleden sonra rüzgarı ile kitesurfçülerin gözdesi.", "en": "A shallow, clean beach on the Gulf of Gökova. Its afternoon wind makes it a favourite with kitesurfers."}, "q": "Akyaka Plajı"}, {"cat": "sea", "t": "~50", "tags": [], "name": {"tr": "Ekincik Koyu", "en": "Ekincik Bay"}, "d": {"tr": "Çam ormanlarıyla çevrili, sakin ve berrak bir koy. Buradan Dalyan’a tekneyle de gidilebilir.", "en": "A calm, clear bay surrounded by pine forest. Boats also run from here to Dalyan."}, "q": "Ekincik Koyu"}, {"cat": "sea", "t": "~65", "tags": ["kids"], "name": {"tr": "Ölüdeniz", "en": "Ölüdeniz"}, "d": {"tr": "Türkiye’nin en ünlü lagünü. Turkuaz, dalgasız su ve Babadağ manzarası.", "en": "Türkiye’s most famous lagoon: turquoise, wave-free water below Babadağ mountain."}, "q": "Ölüdeniz Lagünü"}, {"cat": "spa", "t": "20", "tags": ["kids", "nocar"], "name": {"tr": "Dalyan çamur banyoları", "en": "Dalyan mud baths"}, "d": {"tr": "Dalyan’dan tekneyle gidilen çamur havuzları ve sıcak su. Çamuru sürüp güneşte kurutmak bir gelenek.", "en": "Mud pools and warm springs reached by boat from Dalyan. Covering yourself in mud and drying in the sun is a tradition."}, "q": "Dalyan Çamur Banyoları"}, {"cat": "spa", "t": "~45", "tags": [], "name": {"tr": "Sultaniye Kaplıcaları", "en": "Sultaniye Hot Springs"}, "d": {"tr": "Köyceğiz Gölü kıyısında, suyu 39–40 °C olan 2 bin yıllık kaplıca. Açık ve kapalı havuzları ile çamur banyosu var.", "en": "A 2,000-year-old hot spring on Lake Köyceğiz with water at 39–40 °C, open and indoor pools and a mud bath."}, "q": "Sultaniye Kaplıcaları"}, {"cat": "breakfast", "t": "~35", "tags": [], "name": {"tr": "Akyaka – Azmak kıyısı", "en": "Akyaka – by the Azmak river"}, "d": {"tr": "Buz gibi, kristal berraklığındaki Azmak Çayı’nın kenarında kahvaltı.", "en": "Breakfast beside the ice-cold, crystal-clear Azmak river."}, "q": "Akyaka Azmak"}, {"cat": "breakfast", "t": "~35", "tags": ["kids"], "name": {"tr": "Yuvarlakçay", "en": "Yuvarlakçay"}, "d": {"tr": "Köyceğiz yakınında, çınar gölgesinde, dere kenarında köy kahvaltısı.", "en": "A village breakfast by the stream under plane trees, near Köyceğiz."}, "q": "Yuvarlakçay Köyceğiz"}, {"cat": "breakfast", "t": "20", "tags": ["nocar"], "name": {"tr": "Dalyan nehir kenarı", "en": "Dalyan riverside"}, "d": {"tr": "Kral mezarlarına bakan nehir kıyısında sakin bir sabah kahvaltısı.", "en": "A slow morning breakfast on the riverbank facing the rock tombs."}, "q": "Dalyan"}, {"cat": "nature", "t": "25", "tags": ["kids", "nocar"], "name": {"tr": "Köyceğiz Gölü", "en": "Lake Köyceğiz"}, "d": {"tr": "Gölün kenarında kordon boyunca yürüyüş ve gün batımı.", "en": "A walk along the lakeside promenade and a sunset over the water."}, "q": "Köyceğiz Gölü"}, {"cat": "nature", "t": "~25", "tags": ["kids"], "name": {"tr": "Sığla Ormanı", "en": "Sweetgum forest"}, "d": {"tr": "Dünyada çok az yerde yetişen sığla ağaçlarının ormanı. Gölgede kısa bir yürüyüş için harika.", "en": "A forest of sweetgum trees, which grow in very few places in the world. Lovely for a short, shady walk."}, "q": "Köyceğiz Sığla Ormanı"}, {"cat": "nature", "t": "~30", "tags": ["kids"], "name": {"tr": "Toparlar Şelalesi", "en": "Toparlar Waterfall"}, "d": {"tr": "Köyceğiz yakınında, yeşillikler içinde küçük ve serin bir şelale.", "en": "A small, cool waterfall in the greenery near Köyceğiz."}, "q": "Toparlar Şelalesi"}, {"cat": "nature", "t": "~1 sa 15 dk", "tags": [], "name": {"tr": "Saklıkent Kanyonu", "en": "Saklıkent Canyon"}, "d": {"tr": "Türkiye’nin en uzun kanyonlarından biri. Buz gibi suyun içinde yürüyerek kanyona girilir.", "en": "One of Türkiye’s longest canyons. You wade into it through ice-cold water."}, "q": "Saklıkent Kanyonu"}, {"cat": "nature", "t": "~1 sa 10 dk", "tags": [], "name": {"tr": "Kelebekler Vadisi", "en": "Butterfly Valley"}, "d": {"tr": "Ölüdeniz’den tekneyle ulaşılan, sarp kayalıklar arasında bir koy ve vadi.", "en": "A bay and valley between steep cliffs, reached by boat from Ölüdeniz."}, "q": "Kelebekler Vadisi"}, {"cat": "history", "t": "20", "tags": ["nocar"], "name": {"tr": "Kaunos ve Kral Mezarları", "en": "Kaunos and the King Tombs"}, "d": {"tr": "MÖ 4. yüzyıldan kalma kaya mezarları Dalyan’dan bile görünür. Karşıya sandalla geçip antik kenti gezebilirsiniz.", "en": "Rock tombs from the 4th century BC, visible right from Dalyan. Cross the river by rowing boat and explore the ancient city."}, "q": "Kaunos Antik Kenti"}, {"cat": "history", "t": "25", "tags": ["kids", "nocar"], "name": {"tr": "Kaptan June Kulübesi", "en": "Kaptan June’s Hut"}, "d": {"tr": "İztuzu’yu otel inşaatından kurtaran Kaptan June’un kulübesi, bugün küçük bir müze.", "en": "The hut of Kaptan June, who saved İztuzu from a hotel project, is now a small museum."}, "q": "Kaptan June Kulübesi İztuzu"}, {"cat": "history", "t": "~1 sa", "tags": [], "name": {"tr": "Kayaköy", "en": "Kayaköy"}, "d": {"tr": "1923 nüfus mübadelesinden sonra boşalan taş evleriyle “hayalet köy”.", "en": "The “ghost village” of stone houses, left empty after the 1923 population exchange."}, "q": "Kayaköy Fethiye"}, {"cat": "history", "t": "~1 sa 15 dk", "tags": [], "name": {"tr": "Tlos Antik Kenti", "en": "Tlos ancient city"}, "d": {"tr": "Tepe üzerinde, kaya mezarlarıyla etkileyici bir Likya kenti.", "en": "A hilltop Lycian city with impressive rock tombs."}, "q": "Tlos Antik Kenti"}, {"cat": "activity", "t": "20", "tags": ["kids", "nocar"], "name": {"tr": "Dalyan tekne turu", "en": "Dalyan boat trip"}, "d": {"tr": "Sazlıklar arasından Kaunos’a, çamur banyolarına ve İztuzu’ya giden günlük tekneler.", "en": "Day boats through the reed beds to Kaunos, the mud baths and İztuzu."}, "q": "Dalyan tekne iskelesi"}, {"cat": "activity", "t": "25", "tags": ["kids", "nocar"], "name": {"tr": "Göcek 12 Adalar tekne turu", "en": "Göcek 12 Islands boat tour"}, "d": {"tr": "Koylarda yüzme molalarıyla bütün gün süren tekne turu.", "en": "A full-day boat tour with swimming stops in the bays."}, "q": "Göcek Marina"}, {"cat": "activity", "t": "~40", "tags": [], "name": {"tr": "Dalaman Çayı rafting", "en": "Rafting on the Dalaman river"}, "d": {"tr": "Heyecan arayanlar için nehirde rafting.", "en": "River rafting for those looking for a thrill."}, "q": "Dalaman Çayı rafting"}, {"cat": "activity", "t": "~1 sa 15 dk", "tags": [], "name": {"tr": "Babadağ yamaç paraşütü", "en": "Paragliding from Babadağ"}, "d": {"tr": "Babadağ’dan Ölüdeniz üzerine uçuş. Eğitmenle tandem atlayış yapılır.", "en": "Fly over Ölüdeniz from Babadağ mountain on a tandem flight with an instructor."}, "q": "Babadağ Teleferik"}, {"cat": "activity", "t": "25", "tags": ["kids"], "name": {"tr": "DEKAMER", "en": "DEKAMER turtle centre"}, "d": {"tr": "İztuzu’da yaralı deniz kaplumbağalarının tedavi edildiği merkez. Çocuklar çok seviyor.", "en": "The centre at İztuzu where injured sea turtles are treated. Children love it."}, "q": "DEKAMER İztuzu"}, {"cat": "dinner", "t": "20", "tags": ["nocar"], "name": {"tr": "Dalyan – mavi yengeç", "en": "Dalyan – blue crab"}, "d": {"tr": "Nehir kenarında akşam yemeği; bölgenin meşhur mavi yengeci.", "en": "Dinner on the riverbank with the area’s famous blue crab."}, "q": "Dalyan restoranlar"}, {"cat": "dinner", "t": "~35", "tags": ["kids"], "name": {"tr": "Yuvarlakçay – alabalık", "en": "Yuvarlakçay – trout"}, "d": {"tr": "Dere kenarında, serin gölgede alabalık.", "en": "Trout by the stream, in the cool shade."}, "q": "Yuvarlakçay alabalık"}, {"cat": "dinner", "t": "25", "tags": ["nocar"], "name": {"tr": "Köyceğiz göl kenarı", "en": "Köyceğiz lakeside"}, "d": {"tr": "Göl kıyısında canlı müzik eşliğinde akşam yemeği.", "en": "Dinner by the lake with live music."}, "q": "Köyceğiz kordon"}, {"cat": "dinner", "t": "25", "tags": ["nocar"], "name": {"tr": "Göcek marina", "en": "Göcek marina"}, "d": {"tr": "Yatların arasında, marina manzaralı akşam yemeği.", "en": "Dinner overlooking the yachts in the marina."}, "q": "Göcek Marina"}, {"cat": "market", "t": "5", "tags": ["kids", "nocar"], "name": {"tr": "Ortaca pazarı", "en": "Ortaca market"}, "d": {"tr": "Haftalık semt pazarı: taze meyve, sebze, köy peyniri ve zeytin.", "en": "The weekly market: fresh fruit and vegetables, village cheese and olives."}, "q": "Ortaca Pazar Yeri"}, {"cat": "market", "t": "20", "tags": ["nocar"], "name": {"tr": "Dalyan pazarı (Cumartesi)", "en": "Dalyan market (Saturdays)"}, "d": {"tr": "Cumartesi günleri kurulan renkli pazar.", "en": "A colourful market every Saturday."}, "q": "Dalyan Pazarı"}, {"cat": "market", "t": "—", "tags": [], "name": {"tr": "Yerel lezzetler", "en": "Local flavours"}, "d": {"tr": "Dönüşte yanınıza alın: çam balı, zeytinyağı, nar ekşisi ve sığla yağı.", "en": "Take some home: pine honey, olive oil, pomegranate molasses and sweetgum oil."}, "q": ""}];
+let cat = "all"; const tagOn = new Set();
+try { const h = location.hash.slice(1); if (CATS.some(c => c.k === h)) cat = h; } catch(e){}
+const icon = c => `<svg viewBox="0 0 24 24" aria-hidden="true">${(CATS.find(x => x.k === c)||{}).ic||""}</svg>`;
+const minTxt = (t, L) => t === "—" ? "" : (/^[~]?\d+$/.test(t) ? t + " " + (L === "en" ? "min" : "dk") : (L === "en" ? t.replace(" sa ", " h ").replace(" sa", " h").replace(" dk"," min") : t));
+window.renderPage = function(L, t){
+  const $ = id => document.getElementById(id);
+  $("catChips").innerHTML = `<button type="button" class="chip" data-cat="all" aria-pressed="${cat==="all"}">${t.all}</button>` +
+    CATS.map(c => `<button type="button" class="chip" style="--c:var(--c-${c.k})" data-cat="${c.k}" aria-pressed="${cat===c.k}">${icon(c.k)}${c[L]}</button>`).join("");
+  $("tagChips").innerHTML = ["kids","nocar"].map(k => `<button type="button" class="chip" data-tag="${k}" aria-pressed="${tagOn.has(k)}">${t[k]}</button>`).join("");
+  const list = PLACES.filter(p => (cat === "all" || p.cat === cat) && [...tagOn].every(k => p.tags.includes(k)));
+  $("count").textContent = COUNT[L](list.length);
+  $("grid").innerHTML = list.length ? list.map(p => {
+    const c = CATS.find(x => x.k === p.cat), tm = minTxt(p.t, L);
+    return `<article class="card" style="--c:var(--c-${p.cat})">
+      <div class="card-top"><span class="cat">${icon(p.cat)}${c[L]}</span>${tm ? `<span class="time" title="${t.from}">${tm}</span>` : ""}</div>
+      <div class="card-body">
+        <h3>${p.name[L]}</h3>
+        <p>${p.d[L]}</p>
+        ${p.tags.length ? `<div class="tags-row">${p.tags.map(k => `<span class="tag ${k==="kids"?"k":""}">${t[k]}</span>`).join("")}</div>` : ""}
+        ${p.q ? `<a class="dir" href="https://www.google.com/maps/dir/?api=1&origin=36.8134305,28.7721896&destination=${encodeURIComponent(p.q)}">${t.dir} →</a>` : ""}
+      </div>
+    </article>`; }).join("") : `<p class="empty">${t.none}</p>`;
+};
+document.addEventListener("click", e => {
+  const b = e.target.closest(".chip"); if (!b) return;
+  if (b.dataset.cat) { cat = b.dataset.cat; try { history.replaceState(null, "", cat === "all" ? location.pathname : "#" + cat); } catch(err){} }
+  if (b.dataset.tag) { tagOn.has(b.dataset.tag) ? tagOn.delete(b.dataset.tag) : tagOn.add(b.dataset.tag); }
+  const L = window.siteLang(); window.renderPage(L, Object.assign({}, window.PAGE_T[L]));
+});
+</script>
+<script src="assets/site.js"></script>
+</body>
+</html>
